@@ -9,3 +9,4 @@
 - Das Scoreboard soll sich nach jeder Runde aktualisieren.
 - Sobald die AI oder der User 3 Punkte erreicht hat, soll der entsprechende Win oder Loose Screen angezeigt werden.
 - Bei einer unentschiedener Runde soll sie der Punktestand nicht verändern.
+- Die AI versucht die Spielzüge des Users vorauszusehen, um somit die best möglichsten Spielzüge auszuführen.
