@@ -10,10 +10,11 @@ body > div h1 {
     line-height: 90vh;
 }
 
-body > div button {
+body > div a {
     justify-self: flex-end;
     border: none;
     border-radius: 3px;
     background-color: lawngreen;
     color: white;
+    text-decoration: none;
 }
