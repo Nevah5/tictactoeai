@@ -1,8 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Concert+One&display=swap');
+$color: black;
 body{
   margin: 0;
   padding: 0;
   font-family: Concert One, monospace, sans-serif;
+  color: $color;
 }
 
 body > div{
@@ -21,9 +23,10 @@ body > div{
     left: 50%;
     top: 50%;
     display: block;
-    width: 4px;
-    height: 30px;
-    background-color: black;
+    width: 13%;
+    min-width: 4px;
+    height: 100%;
+    background-color: $color;
   }
   @mixin circleO {
     content: '';
@@ -35,7 +38,7 @@ body > div{
     display: block;
     height: 100%;
     width: 100%;
-    background-color: black;
+    background-color: $color;
   }
   //X & O
   div.x{
@@ -79,6 +82,12 @@ body > div{
       justify-content: center;
       align-items: center;
 
+      &:nth-child(1), &:nth-child(3){
+        div{
+          height: 20px;
+          width: 20px;
+        }
+      }
       &:nth-child(1), &:nth-child(2), &:nth-child(3){
         padding-bottom: 0;
         align-items: flex-end;
@@ -94,8 +103,61 @@ body > div{
         font-size: 1rem;
       }//Swap and Retry Icon
       &:nth-child(7), &:nth-child(9){
-        font-size: 2rem;
+        padding: 0;
+        transform: translateY(-30%);
+        font-size: 3rem;
       }//Scores
+    }
+  }
+  & > div.board{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    width: 25vw;
+    height: 25vw;
+    margin-top: 50px;
+
+    & > div{ //fields
+      height: 100%;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      div{ //for x's and o's
+        height: 70%;
+        width: 70%;
+      }
+
+      $border: $color solid 8px;
+      &:nth-child(1){
+        border-right: $border;
+        border-bottom: $border;
+      }
+      &:nth-child(2){
+        border-bottom: $border;
+      }
+      &:nth-child(3){
+        border-left: $border;
+        border-bottom: $border;
+      }
+      &:nth-child(4){
+        border-right: $border;
+      }
+      &:nth-child(6){
+        border-left: $border;
+      }
+      &:nth-child(7){
+        border-top: $border;
+        border-right: $border;
+      }
+      &:nth-child(8){
+        border-top: $border;
+      }
+      &:nth-child(9){
+        border-top: $border;
+        border-left: $border;
+      }
     }
   }
 }

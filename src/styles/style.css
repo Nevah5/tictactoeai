@@ -3,6 +3,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: Concert One, monospace, sans-serif;
+  color: black;
 }
 
 body > div {
@@ -39,8 +40,9 @@ body > div div.x::after {
   left: 50%;
   top: 50%;
   display: block;
-  width: 4px;
-  height: 30px;
+  width: 13%;
+  min-width: 4px;
+  height: 100%;
   background-color: black;
 }
 
@@ -53,8 +55,9 @@ body > div div.x::before {
   left: 50%;
   top: 50%;
   display: block;
-  width: 4px;
-  height: 30px;
+  width: 13%;
+  min-width: 4px;
+  height: 100%;
   background-color: black;
   -webkit-transform: translate(-50%, -50%) rotate(-45deg);
           transform: translate(-50%, -50%) rotate(-45deg);
@@ -120,6 +123,11 @@ body > div > div.grid > div {
           align-items: center;
 }
 
+body > div > div.grid > div:nth-child(1) div, body > div > div.grid > div:nth-child(3) div {
+  height: 20px;
+  width: 20px;
+}
+
 body > div > div.grid > div:nth-child(1), body > div > div.grid > div:nth-child(2), body > div > div.grid > div:nth-child(3) {
   padding-bottom: 0;
   -webkit-box-align: end;
@@ -143,6 +151,76 @@ body > div > div.grid > div:nth-child(2), body > div > div.grid > div:nth-child(
 }
 
 body > div > div.grid > div:nth-child(7), body > div > div.grid > div:nth-child(9) {
-  font-size: 2rem;
+  padding: 0;
+  -webkit-transform: translateY(-30%);
+          transform: translateY(-30%);
+  font-size: 3rem;
+}
+
+body > div > div.board {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[3];
+      grid-template-columns: repeat(3, 1fr);
+  -ms-grid-rows: (1fr)[3];
+      grid-template-rows: repeat(3, 1fr);
+  width: 25vw;
+  height: 25vw;
+  margin-top: 50px;
+}
+
+body > div > div.board > div {
+  height: 100%;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body > div > div.board > div div {
+  height: 70%;
+  width: 70%;
+}
+
+body > div > div.board > div:nth-child(1) {
+  border-right: black solid 8px;
+  border-bottom: black solid 8px;
+}
+
+body > div > div.board > div:nth-child(2) {
+  border-bottom: black solid 8px;
+}
+
+body > div > div.board > div:nth-child(3) {
+  border-left: black solid 8px;
+  border-bottom: black solid 8px;
+}
+
+body > div > div.board > div:nth-child(4) {
+  border-right: black solid 8px;
+}
+
+body > div > div.board > div:nth-child(6) {
+  border-left: black solid 8px;
+}
+
+body > div > div.board > div:nth-child(7) {
+  border-top: black solid 8px;
+  border-right: black solid 8px;
+}
+
+body > div > div.board > div:nth-child(8) {
+  border-top: black solid 8px;
+}
+
+body > div > div.board > div:nth-child(9) {
+  border-top: black solid 8px;
+  border-left: black solid 8px;
 }
 /*# sourceMappingURL=style.css.map */
