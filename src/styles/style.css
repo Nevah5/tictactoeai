@@ -1,61 +1,29 @@
+@import url("https://fonts.googleapis.com/css2?family=Concert+One&display=swap");
 body {
   margin: 0;
   padding: 0;
+  font-family: Concert One, monospace, sans-serif;
 }
 
 body > div {
+  height: 100vh;
+  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  height: 16vh;
-  width: 100%;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
-body > div > div {
-  display: block;
-  height: 100%;
-  margin-right: auto;
-}
-
-body > div span {
-  font-family: monospace;
-  font-size: 2rem;
-}
-
-body > div button {
-  justify-self: flex-end;
-  margin: 0 20px 0 auto;
-  border: none;
-  padding: 5px 10px;
-  border-radius: .2em;
-  background-color: lawngreen;
-  color: white;
-  font-size: 2rem;
-  cursor: pointer;
-}
-
-body > div:nth-child(2) {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
-  height: 84vh;
-  width: 100%;
-}
-
-body > div:nth-child(2) > div {
-  margin: 0;
-  margin-top: 120px;
-  height: 30vh;
-  width: 30vh;
+body > div > div.grid {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: (1fr)[3];
@@ -64,39 +32,42 @@ body > div:nth-child(2) > div {
       grid-template-rows: repeat(3, 1fr);
 }
 
-body > div:nth-child(2) > div div:nth-child(1) {
-  border-right: solid black 3px;
-  border-bottom: solid black 3px;
+body > div > div.grid > div {
+  padding: 5px 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
-body > div:nth-child(2) > div div:nth-child(2) {
-  border-bottom: solid black 3px;
+body > div > div.grid > div:nth-child(1), body > div > div.grid > div:nth-child(2), body > div > div.grid > div:nth-child(3) {
+  padding-bottom: 0;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
 }
 
-body > div:nth-child(2) > div div:nth-child(3) {
-  border-left: solid black 3px;
-  border-bottom: solid black 3px;
+body > div > div.grid > div:nth-child(7), body > div > div.grid > div:nth-child(8), body > div > div.grid > div:nth-child(9) {
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  padding-top: 0;
 }
 
-body > div:nth-child(2) > div div:nth-child(4) {
-  border-right: solid black 3px;
-  border-bottom: solid black 3px;
+body > div > div.grid > div:nth-child(4), body > div > div.grid > div:nth-child(6) {
+  font-size: 1.5rem;
 }
 
-body > div:nth-child(2) > div div:nth-child(5) {
-  border-bottom: solid black 3px;
+body > div > div.grid > div:nth-child(2), body > div > div.grid > div:nth-child(8) {
+  font-size: 1rem;
 }
 
-body > div:nth-child(2) > div div:nth-child(6) {
-  border-left: solid black 3px;
-  border-bottom: solid black 3px;
-}
-
-body > div:nth-child(2) > div div:nth-child(7) {
-  border-right: solid black 3px;
-}
-
-body > div:nth-child(2) > div div:nth-child(9) {
-  border-left: solid black 3px;
+body > div > div.grid > div:nth-child(7), body > div > div.grid > div:nth-child(9) {
+  font-size: 2rem;
 }
 /*# sourceMappingURL=style.css.map */

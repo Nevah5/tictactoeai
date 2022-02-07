@@ -1,82 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Concert+One&display=swap');
 body{
   margin: 0;
   padding: 0;
+  font-family: Concert One, monospace, sans-serif;
 }
 
 body > div{
+  height: 100vh;
+  width: 100%;
   display: flex;
+  justify-content: flex-start;
   align-items: center;
-  height: 16vh;
-  width: 100%;
+  flex-direction: column;
 
-  & > div{
-    display: block;
-    height: 100%;
-    margin-right: auto;
-  }
-  span{
-    font-family: monospace;
-    font-size: 2rem;
-  }
-  button{
-    justify-self: flex-end;
-    margin: 0 20px 0 auto;
-    border: none;
-    padding: 5px 10px;
-    border-radius: .2em;
-    background-color: lawngreen;
-    color: white;
-    font-size: 2rem;
-    cursor: pointer;
-  }
-}
-
-body > div:nth-child(2){
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  height: 84vh;
-  width: 100%;
-
-  & > div{
-    margin: 0;
-    margin-top: 120px;
-    height: 30vh;
-    width: 30vh;
+  & > div.grid{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, 1fr);
 
-    div{
-      $borders: solid black 3px;
-      &:nth-child(1){
-        border-right: $borders;
-        border-bottom: $borders;
+    & > div{
+      padding: 5px 15px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      &:nth-child(1), &:nth-child(2), &:nth-child(3){
+        padding-bottom: 0;
+        align-items: flex-end;
       }
-      &:nth-child(2){
-        border-bottom: $borders;
+      &:nth-child(7), &:nth-child(8), &:nth-child(9){
+        align-items: flex-start;
+        padding-top: 0;
       }
-      &:nth-child(3){
-        border-left: $borders;
-        border-bottom: $borders;
-      }
-      &:nth-child(4){
-        border-right: $borders;
-        border-bottom: $borders;
-      }
-      &:nth-child(5){
-        border-bottom: $borders;
-      }
-      &:nth-child(6){
-        border-left: $borders;
-        border-bottom: $borders;
-      }
-      &:nth-child(7){
-        border-right: $borders;
-      }
-      &:nth-child(9){
-        border-left: $borders;
-      }
+      &:nth-child(4), &:nth-child(6){
+        font-size: 1.5rem;
+      } //USER & AI
+      &:nth-child(2), &:nth-child(8){
+        font-size: 1rem;
+      }//Swap and Retry Icon
+      &:nth-child(7), &:nth-child(9){
+        font-size: 2rem;
+      }//Scores
     }
   }
 }
