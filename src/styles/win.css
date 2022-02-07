@@ -1,0 +1,19 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+body > div h1 {
+    font-family: monospace;
+    text-align: center;
+    height: 90vh;
+    line-height: 90vh;
+}
+
+body > div button {
+    justify-self: flex-end;
+    border: none;
+    border-radius: 3px;
+    background-color: lawngreen;
+    color: white;
+}
