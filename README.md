@@ -1,6 +1,17 @@
-# tictactoeai
+<br>
 
-## SMART Ziele
+<p align="center">
+  <img src="./tictactoeai.png" height="100px"><br>
+  A TicTacToe Game in<br>
+  the browser with an AI.
+</p>
+<br>
+
+-------------------------------------------------
+
+<br>
+
+# SMART Ziele
 
 - Die Webseite soll ein funktionstüchtiges TicTacToe Spielfeld anzeigen, sowie ein Scoreboard.
 - Der User kann angeben, ob er oder die AI anfängt.
