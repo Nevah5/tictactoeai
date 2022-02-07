@@ -23,6 +23,81 @@ body > div {
           flex-direction: column;
 }
 
+body > div div.x {
+  display: block;
+  height: 30px;
+  width: 30px;
+  position: relative;
+}
+
+body > div div.x::after {
+  content: '';
+  position: absolute;
+  border-radius: 2px;
+  -webkit-transform: translate(-50%, -50%) rotate(45deg);
+          transform: translate(-50%, -50%) rotate(45deg);
+  left: 50%;
+  top: 50%;
+  display: block;
+  width: 4px;
+  height: 30px;
+  background-color: black;
+}
+
+body > div div.x::before {
+  content: '';
+  position: absolute;
+  border-radius: 2px;
+  -webkit-transform: translate(-50%, -50%) rotate(45deg);
+          transform: translate(-50%, -50%) rotate(45deg);
+  left: 50%;
+  top: 50%;
+  display: block;
+  width: 4px;
+  height: 30px;
+  background-color: black;
+  -webkit-transform: translate(-50%, -50%) rotate(-45deg);
+          transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+body > div div.o {
+  display: block;
+  height: 30px;
+  width: 30px;
+  position: relative;
+}
+
+body > div div.o::before {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  display: block;
+  height: 100%;
+  width: 100%;
+  background-color: black;
+}
+
+body > div div.o::after {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  display: block;
+  height: 100%;
+  width: 100%;
+  background-color: black;
+  background-color: white;
+  height: 73%;
+  width: 73%;
+}
+
 body > div > div.grid {
   display: -ms-grid;
   display: grid;

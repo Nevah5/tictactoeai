@@ -13,6 +13,61 @@ body > div{
   align-items: center;
   flex-direction: column;
 
+  @mixin crossX {
+    content: '';
+    position: absolute;
+    border-radius: 2px;
+    transform: translate(-50%, -50%) rotate(45deg);
+    left: 50%;
+    top: 50%;
+    display: block;
+    width: 4px;
+    height: 30px;
+    background-color: black;
+  }
+  @mixin circleO {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    display: block;
+    height: 100%;
+    width: 100%;
+    background-color: black;
+  }
+  //X & O
+  div.x{
+    display: block;
+    height: 30px;
+    width: 30px;
+    position: relative;
+
+    &::after{
+      @include crossX();
+    }
+    &::before{
+      @include crossX();
+      transform: translate(-50%, -50%) rotate(-45deg);
+    }
+  }
+  div.o{
+    display: block;
+    height: 30px;
+    width: 30px;
+    position: relative;
+
+    &::before{
+      @include circleO();
+    }
+    &::after{
+      @include circleO();
+      background-color: white;
+      height: 73%;
+      width: 73%;
+    }
+  }
   & > div.grid{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
