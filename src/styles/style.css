@@ -7,25 +7,96 @@ body > div {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  height: 10vw;
+  height: 16vh;
   width: 100%;
+}
+
+body > div > div {
+  display: block;
+  height: 100%;
+  margin-right: auto;
 }
 
 body > div span {
   font-family: monospace;
+  font-size: 2rem;
 }
 
 body > div button {
   justify-self: flex-end;
+  margin: 0 20px 0 auto;
   border: none;
-  border-radius: 3px;
+  padding: 5px 10px;
+  border-radius: .2em;
   background-color: lawngreen;
   color: white;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+body > div:nth-child(2) {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  height: 84vh;
+  width: 100%;
+}
+
+body > div:nth-child(2) > div {
+  margin: 0;
+  margin-top: 120px;
+  height: 30vh;
+  width: 30vh;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[3];
+      grid-template-columns: repeat(3, 1fr);
+  -ms-grid-rows: (1fr)[3];
+      grid-template-rows: repeat(3, 1fr);
+}
+
+body > div:nth-child(2) > div div:nth-child(1) {
+  border-right: solid black 3px;
+  border-bottom: solid black 3px;
+}
+
+body > div:nth-child(2) > div div:nth-child(2) {
+  border-bottom: solid black 3px;
+}
+
+body > div:nth-child(2) > div div:nth-child(3) {
+  border-left: solid black 3px;
+  border-bottom: solid black 3px;
+}
+
+body > div:nth-child(2) > div div:nth-child(4) {
+  border-right: solid black 3px;
+  border-bottom: solid black 3px;
+}
+
+body > div:nth-child(2) > div div:nth-child(5) {
+  border-bottom: solid black 3px;
+}
+
+body > div:nth-child(2) > div div:nth-child(6) {
+  border-left: solid black 3px;
+  border-bottom: solid black 3px;
+}
+
+body > div:nth-child(2) > div div:nth-child(7) {
+  border-right: solid black 3px;
+}
+
+body > div:nth-child(2) > div div:nth-child(9) {
+  border-left: solid black 3px;
 }
 /*# sourceMappingURL=style.css.map */

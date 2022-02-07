@@ -5,19 +5,78 @@ body{
 
 body > div{
   display: flex;
-  justify-content: center;
   align-items: center;
-  height: 10vw;
+  height: 16vh;
   width: 100%;
 
+  & > div{
+    display: block;
+    height: 100%;
+    margin-right: auto;
+  }
   span{
     font-family: monospace;
+    font-size: 2rem;
   }
   button{
     justify-self: flex-end;
+    margin: 0 20px 0 auto;
     border: none;
-    border-radius: 3px;
+    padding: 5px 10px;
+    border-radius: .2em;
     background-color: lawngreen;
     color: white;
+    font-size: 2rem;
+    cursor: pointer;
+  }
+}
+
+body > div:nth-child(2){
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  height: 84vh;
+  width: 100%;
+
+  & > div{
+    margin: 0;
+    margin-top: 120px;
+    height: 30vh;
+    width: 30vh;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+
+    div{
+      $borders: solid black 3px;
+      &:nth-child(1){
+        border-right: $borders;
+        border-bottom: $borders;
+      }
+      &:nth-child(2){
+        border-bottom: $borders;
+      }
+      &:nth-child(3){
+        border-left: $borders;
+        border-bottom: $borders;
+      }
+      &:nth-child(4){
+        border-right: $borders;
+        border-bottom: $borders;
+      }
+      &:nth-child(5){
+        border-bottom: $borders;
+      }
+      &:nth-child(6){
+        border-left: $borders;
+        border-bottom: $borders;
+      }
+      &:nth-child(7){
+        border-right: $borders;
+      }
+      &:nth-child(9){
+        border-left: $borders;
+      }
+    }
   }
 }
