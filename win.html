@@ -5,14 +5,19 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="src/styles/win.css">
     <title>Victory</title>
 </head>
 
 <body>
     <div>
-        <span>Du hast Gewonnen!</span>
+        <h1>Du hast Gewonnen!</h1>
         <button type="button" onclick="">Restart</button>
     </div>
+    <script src="src/scripts/confetti.js"></script>
+    <script>
+        confetti.start();
+    </script>
 </body>
 
 </html>
