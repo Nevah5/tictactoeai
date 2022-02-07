@@ -22,7 +22,7 @@
 - [Lizenz](https://github.com/Nevah5/tictactoeai#lizenz)
 
 # Allgemeine Informationen
-Dieses Projekt entsand wärend der CodeWeek im ZLI (07.02.2022 - 11.02.2022). Die Aufgabe war es eine Webapplikation zu programmieren. Wir haben uns für ein TicTacToe Spiel entschieden, bei dieser der User gegen eine AI antritt. Das Ziel des Spieles ist es ingesamt drei Runden zu gewinnen.
+Dieses Projekt entsand wärend der CodeWeek im ZLI (07.02.2022 - 11.02.2022). Die Aufgabe war es eine Webapplikation zu programmieren. Wir haben uns für ein TicTacToe Spiel entschieden, bei dem der User gegen eine AI antritt. Das Ziel des Spieles ist es ingesamt drei Runden zu gewinnen.
 
 ## SMART Ziele
 - Die Webseite soll ein funktionstüchtiges TicTacToe Spielfeld anzeigen, sowie ein Scoreboard.
