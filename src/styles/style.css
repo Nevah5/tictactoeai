@@ -1,0 +1,31 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body > div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 10vw;
+  width: 100%;
+}
+
+body > div span {
+  font-family: monospace;
+}
+
+body > div button {
+  justify-self: flex-end;
+  border: none;
+  border-radius: 3px;
+  background-color: lawngreen;
+  color: white;
+}
+/*# sourceMappingURL=style.css.map */

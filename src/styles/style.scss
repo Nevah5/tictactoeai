@@ -1,0 +1,23 @@
+body{
+  margin: 0;
+  padding: 0;
+}
+
+body > div{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 10vw;
+  width: 100%;
+
+  span{
+    font-family: monospace;
+  }
+  button{
+    justify-self: flex-end;
+    border: none;
+    border-radius: 3px;
+    background-color: lawngreen;
+    color: white;
+  }
+}
