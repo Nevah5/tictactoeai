@@ -21,3 +21,10 @@
 - Sobald die AI oder der User 3 Punkte erreicht hat, soll der entsprechende Win oder Loose Screen angezeigt werden.
 - Bei einer unentschiedener Runde soll sie der Punktestand nicht verändern.
 - Die AI versucht die Spielzüge des Users vorauszusehen, um somit die best möglichsten Spielzüge auszuführen.
+
+# Teamkodex
+
+1. Wir sind höflich und freundlich.
+2. Wir helfen uns gegenseitig.
+3. Wir haben Spass.
+4. Wir commiten so oft wie möglich.
