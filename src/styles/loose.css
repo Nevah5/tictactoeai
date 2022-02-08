@@ -1,63 +1,169 @@
-@import url('https://fonts.googleapis.com/css2?family=Concert+One&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Concert+One&display=swap");
+html {
+  height: 100%;
+}
 
 body {
-    margin: 0;
-    padding: 0;
-    font-family: Concert One, monospace, sans-serif;
-    background-color: rgb(114, 123, 139);
-    overflow: hidden;
+  margin: 0;
+  padding: 0;
+  font-family: Concert One, monospace, sans-serif;
+  background-color: #4276ca;
+  overflow: hidden;
 }
 
-h1{
-    font-size: 50px;
-    text-shadow: 2px 2px 5px rgb(163, 163, 163), 0 0 25px rgb(0, 0, 0), 0 0 5px rgb(255, 255, 255);
-}
-.rain > div a {
-    padding: 10px 23px;
-    border-radius: 10px;
-    background-color: rgb(90, 202, 90);
-    color: white;
-    text-decoration: none;
-    font-size: 30px;
-    font-weight: 1000;
+h1 {
+  font-size: 50px;
+  text-shadow: 2px 2px 5px #a3a3a3, 0 0 25px black, 0 0 5px white;
+  color: white;
 }
 
-.container{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    height: 100vh;
-    width: 100%;
+div.container a {
+  padding: 10px 23px;
+  border-radius: 10px;
+  background-color: #5aca5a;
+  color: white;
+  text-decoration: none;
+  font-size: 30px;
+  font-weight: 1000;
 }
 
-html{height:100%;}
-
-.drop {
-	width: 1px;
-	height:89px;
-    background-color: rgb(187, 187, 187);
-    border-top-right-radius:  50%;
-    border-top-left-radius:  50%;
-	position: absolute;
-    display: block;
-	bottom:200px;
-	-webkit-animation: fall .63s linear infinite;
--moz-animation: fall .63s linear infinite;
+.container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 100vh;
+  width: 100%;
 }
 
-/* animate the drops*/
-@-webkit-keyframes fall {
-	to {margin-top:900px;}
+div.icons {
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 50%;
+  width: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  z-index: -1;
 }
-@-moz-keyframes fall {
-	to {margin-top:900px;}
+
+div.icons div:nth-child(1) {
+  -webkit-perspective: 10px;
+          perspective: 10px;
+  margin-left: 470px;
+  margin-bottom: 50px;
 }
-.rain{
-    z-index: 9999;
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
+
+div.icons div:nth-child(2) {
+  margin-right: 400px;
+  -webkit-transform: rotate(120deg) scale(1.4);
+          transform: rotate(120deg) scale(1.4);
 }
+
+div.icons div:nth-child(3) {
+  margin-left: 350px;
+  -webkit-transform: rotate(-23deg) scale(1.2);
+          transform: rotate(-23deg) scale(1.2);
+}
+
+div.icons div:nth-child(4) {
+  -webkit-transform: scale(1.2) translate(-50%, -30%);
+          transform: scale(1.2) translate(-50%, -30%);
+  margin-right: 140px;
+  margin-top: 20px;
+}
+
+div.x {
+  display: block;
+  height: 50px;
+  width: 50px;
+  position: relative;
+}
+
+div.x::before {
+  content: '';
+  position: absolute;
+  border-radius: 2px;
+  -webkit-transform: translate(-50%, -50%) rotate(-45deg);
+          transform: translate(-50%, -50%) rotate(-45deg);
+  left: 50%;
+  top: 50%;
+  display: block;
+  width: 13%;
+  min-width: 4px;
+  height: 100%;
+  background-color: white;
+}
+
+div.x::after {
+  content: '';
+  position: absolute;
+  border-radius: 2px;
+  -webkit-transform: translate(-50%, -50%) rotate(45deg);
+          transform: translate(-50%, -50%) rotate(45deg);
+  left: 50%;
+  top: 50%;
+  display: block;
+  width: 13%;
+  min-width: 4px;
+  height: 100%;
+  background-color: white;
+}
+
+div.o {
+  display: block;
+  height: 50px;
+  width: 50px;
+  position: relative;
+}
+
+div.o::after {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  display: block;
+  height: 72%;
+  width: 72%;
+  background-color: #4276ca;
+}
+
+div.o::before {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  display: block;
+  height: 100%;
+  width: 100%;
+  background-color: white;
+}
+/*# sourceMappingURL=loose.css.map */
