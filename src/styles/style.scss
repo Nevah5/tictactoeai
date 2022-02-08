@@ -84,6 +84,12 @@ body > div{
       justify-content: center;
       align-items: center;
 
+      a#retryicon{
+        color: inherit;
+      }
+      span#switch{
+        cursor: pointer;
+      }
       &:nth-child(1), &:nth-child(3){
         div{
           height: 20px;

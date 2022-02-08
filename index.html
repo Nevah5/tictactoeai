@@ -6,6 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="src/styles/style.css">
+  <script src="https://kit.fontawesome.com/e9bea209b0.js" crossorigin="anonymous"></script>
   <title>TicTacToe</title>
 </head>
 
@@ -13,13 +14,13 @@
   <div>
     <div class="grid">
       <div>
-        <div class="x" id="usericon"></div>
+        {<div class="x" id="usericon"></div>}
       </div>
       <div>
-        <span id="arrow">&lt;-&gt;</span>
+        <span id="switch"><i class="fas fa-exchange-alt"></i></span>
       </div>
       <div>
-        <div class="o" id="aiicon"></div>
+        {<div class="o" id="aiicon"></div>}
       </div>
       <div><span>USER</span></div>
       <div><span>-</span></div>
@@ -28,7 +29,7 @@
         <span id="userscore">0</span>
       </div>
       <div>
-        <span id="retryarrow">()</span>
+        <a href="./" id="retryicon"><i class="fas fa-redo-alt"></i></a>
       </div>
       <div>
         <span id="aiscore">0</span>

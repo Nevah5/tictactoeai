@@ -124,6 +124,14 @@ body > div > div.grid > div {
           align-items: center;
 }
 
+body > div > div.grid > div a#retryicon {
+  color: inherit;
+}
+
+body > div > div.grid > div span#switch {
+  cursor: pointer;
+}
+
 body > div > div.grid > div:nth-child(1) div, body > div > div.grid > div:nth-child(3) div {
   height: 20px;
   width: 20px;
