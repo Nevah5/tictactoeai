@@ -54,7 +54,7 @@ function userWon(userWinRow, playfield){
   restartDiv.appendChild(span);
   board.appendChild(restartDiv);
 }
-function userTie(playfield){
+function userTie(){
   if(document.querySelector(".restart")) return;
   const board = document.querySelector(".board");
 
@@ -99,7 +99,7 @@ document.addEventListener("DOMContentLoaded", _ => {
     });
     //test if no tie
     if(!board.includes(0)){
-      userTie(board);
+      userTie();
     }
   });
 });
