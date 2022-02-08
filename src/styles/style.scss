@@ -1,10 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Concert+One&display=swap');
-$color: black;
+$color: rgb(205, 213, 231);
+$bg-color: rgb(66, 118, 202);
 body{
   margin: 0;
   padding: 0;
   font-family: Concert One, monospace, sans-serif;
   color: $color;
+  background-color: $bg-color;
 }
 
 body > div{
@@ -66,7 +68,7 @@ body > div{
     }
     &::after{
       @include circleO();
-      background-color: white;
+      background-color: $bg-color;
       height: 73%;
       width: 73%;
     }

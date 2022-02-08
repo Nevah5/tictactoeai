@@ -3,7 +3,8 @@ body {
   margin: 0;
   padding: 0;
   font-family: Concert One, monospace, sans-serif;
-  color: black;
+  color: #cdd5e7;
+  background-color: #4276ca;
 }
 
 body > div {
@@ -43,7 +44,7 @@ body > div div.x::after {
   width: 13%;
   min-width: 4px;
   height: 100%;
-  background-color: black;
+  background-color: #cdd5e7;
 }
 
 body > div div.x::before {
@@ -58,7 +59,7 @@ body > div div.x::before {
   width: 13%;
   min-width: 4px;
   height: 100%;
-  background-color: black;
+  background-color: #cdd5e7;
   -webkit-transform: translate(-50%, -50%) rotate(-45deg);
           transform: translate(-50%, -50%) rotate(-45deg);
 }
@@ -81,7 +82,7 @@ body > div div.o::before {
   display: block;
   height: 100%;
   width: 100%;
-  background-color: black;
+  background-color: #cdd5e7;
 }
 
 body > div div.o::after {
@@ -95,8 +96,8 @@ body > div div.o::after {
   display: block;
   height: 100%;
   width: 100%;
-  background-color: black;
-  background-color: white;
+  background-color: #cdd5e7;
+  background-color: #4276ca;
   height: 73%;
   width: 73%;
 }
@@ -189,38 +190,38 @@ body > div > div.board > div div {
 }
 
 body > div > div.board > div:nth-child(1) {
-  border-right: black solid 8px;
-  border-bottom: black solid 8px;
+  border-right: #cdd5e7 solid 8px;
+  border-bottom: #cdd5e7 solid 8px;
 }
 
 body > div > div.board > div:nth-child(2) {
-  border-bottom: black solid 8px;
+  border-bottom: #cdd5e7 solid 8px;
 }
 
 body > div > div.board > div:nth-child(3) {
-  border-left: black solid 8px;
-  border-bottom: black solid 8px;
+  border-left: #cdd5e7 solid 8px;
+  border-bottom: #cdd5e7 solid 8px;
 }
 
 body > div > div.board > div:nth-child(4) {
-  border-right: black solid 8px;
+  border-right: #cdd5e7 solid 8px;
 }
 
 body > div > div.board > div:nth-child(6) {
-  border-left: black solid 8px;
+  border-left: #cdd5e7 solid 8px;
 }
 
 body > div > div.board > div:nth-child(7) {
-  border-top: black solid 8px;
-  border-right: black solid 8px;
+  border-top: #cdd5e7 solid 8px;
+  border-right: #cdd5e7 solid 8px;
 }
 
 body > div > div.board > div:nth-child(8) {
-  border-top: black solid 8px;
+  border-top: #cdd5e7 solid 8px;
 }
 
 body > div > div.board > div:nth-child(9) {
-  border-top: black solid 8px;
-  border-left: black solid 8px;
+  border-top: #cdd5e7 solid 8px;
+  border-left: #cdd5e7 solid 8px;
 }
 /*# sourceMappingURL=style.css.map */
