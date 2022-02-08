@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Concert+One&display=swap');
+
+html{height:100%;}
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Concert One, monospace, sans-serif;
+    background-color: rgb(66, 118, 202);
+    overflow: hidden;
+}
+
+h1{
+    font-size: 50px;
+    text-shadow: 2px 2px 5px rgb(163, 163, 163), 0 0 25px rgb(0, 0, 0), 0 0 5px rgb(255, 255, 255);
+    color: white;
+}
+div.container a {
+    padding: 10px 23px;
+    border-radius: 10px;
+    background-color: rgb(90, 202, 90);
+    color: white;
+    text-decoration: none;
+    font-size: 30px;
+    font-weight: 1000;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    width: 100%;
+}
+
+
+div.icons{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 50%;
+    width: 50%;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    z-index: -1;
+
+    & div:nth-child(1){
+        perspective: 10px;
+        margin-left: 470px;
+        margin-bottom: 50px;
+    }
+    & div:nth-child(2){
+        margin-right: 400px;
+        transform: rotate(120deg) scale(1.4);
+    }
+    & div:nth-child(3){
+        margin-left: 350px;
+        transform: rotate(-23deg) scale(1.2);
+    }
+    & div:nth-child(4){
+        transform: scale(1.2) translate(-50%, -30%);
+        margin-right: 140px;
+        margin-top: 20px;
+    }
+}
+div.x{
+    display: block;
+    height: 50px;
+    width: 50px;
+    position: relative;
+
+    &::before{
+        content: '';
+        position: absolute;
+        border-radius: 2px;
+        transform: translate(-50%, -50%) rotate(-45deg);
+        left: 50%;
+        top: 50%;
+        display: block;
+        width: 13%;
+        min-width: 4px;
+        height: 100%;
+        background-color: white;
+    }
+    &::after{
+        content: '';
+        position: absolute;
+        border-radius: 2px;
+        transform: translate(-50%, -50%) rotate(45deg);
+        left: 50%;
+        top: 50%;
+        display: block;
+        width: 13%;
+        min-width: 4px;
+        height: 100%;
+        background-color: white;
+    }
+}
+div.o{
+    display: block;
+    height: 50px;
+    width: 50px;
+    position: relative;
+
+    &::after{
+        content: '';
+        position: absolute;
+        border-radius: 50%;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        display: block;
+        height: 72%;
+        width: 72%;
+        background-color: rgb(66, 118, 202);
+    }
+    &::before{
+        content: '';
+        position: absolute;
+        border-radius: 50%;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        display: block;
+        height: 100%;
+        width: 100%;
+        background-color: white;
+    }
+}

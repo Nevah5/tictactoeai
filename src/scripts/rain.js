@@ -10,7 +10,7 @@ function randRange(minNum, maxNum) {
 function createRain() {
 
     for (i = 1; i < nbDrop; i++) {
-        var dropLeft = randRange(0, 1600);
+        var dropLeft = randRange(0, window.innerWidth);
         var dropTop = randRange(-1000, 1400);
 
         document.querySelector('.rain').innerHTML += '<div class="drop" id="drop' + i + '"></div>';
