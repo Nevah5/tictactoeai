@@ -128,7 +128,7 @@ body > div{
     background-color: $color;
     position: relative;
 
-    & > div:not(.line){ //fields
+    & > div.field{ //fields
       height: 100%;
       width: 100%;
       display: flex;
@@ -213,6 +213,47 @@ body > div{
         transform: translate(-50%, -50%) rotate(-45deg);
         grid-column: 2/3;
         grid-row: 2/3;
+      }
+    }
+    & > .restart{
+      position: absolute;
+      transform: translate(-50%, -50%);
+      top: 50%;
+      left: 50%;
+      height: 120%;
+      width: 120%;
+      z-index: 9999;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: .5em;
+      animation: restartFade 1s 2s ease-in-out forwards;
+
+      @keyframes restartFade {
+        0%{
+          background-color: transparent;
+        }
+        100%{
+          background-color: $bg-color;
+        }
+      }
+      span{
+        @keyframes restartSpanFade {
+          0%{
+            opacity: 0;
+            font-size: 2rem;
+          }
+          20%{
+            opacity: 1;
+            font-size: 2.6rem;
+          }
+          100%{
+            opacity: 1;
+            font-size: 2.2rem;
+          }
+        }
+        font-size: 0rem;
+        animation: restartSpanFade 1s 2.3s ease-in-out forwards;
       }
     }
   }

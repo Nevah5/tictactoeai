@@ -181,7 +181,7 @@ body > div > div.board {
   position: relative;
 }
 
-body > div > div.board > div:not(.line) {
+body > div > div.board > div.field {
   height: 100%;
   width: 100%;
   display: -webkit-box;
@@ -197,7 +197,7 @@ body > div > div.board > div:not(.line) {
   background-color: #4276ca;
 }
 
-body > div > div.board > div:not(.line) div {
+body > div > div.board > div.field div {
   -webkit-animation: xoFade .3s forwards;
           animation: xoFade .3s forwards;
 }
@@ -344,5 +344,82 @@ body > div > div.board > .line#l7 {
   -ms-grid-row: 2;
   -ms-grid-row-span: 1;
   grid-row: 2/3;
+}
+
+body > div > div.board > .restart {
+  position: absolute;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  height: 120%;
+  width: 120%;
+  z-index: 9999;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: .5em;
+  -webkit-animation: restartFade 1s 2s ease-in-out forwards;
+          animation: restartFade 1s 2s ease-in-out forwards;
+}
+
+@-webkit-keyframes restartFade {
+  0% {
+    background-color: transparent;
+  }
+  100% {
+    background-color: #4276ca;
+  }
+}
+
+@keyframes restartFade {
+  0% {
+    background-color: transparent;
+  }
+  100% {
+    background-color: #4276ca;
+  }
+}
+
+body > div > div.board > .restart span {
+  font-size: 0rem;
+  -webkit-animation: restartSpanFade 1s 2.3s ease-in-out forwards;
+          animation: restartSpanFade 1s 2.3s ease-in-out forwards;
+}
+
+@-webkit-keyframes restartSpanFade {
+  0% {
+    opacity: 0;
+    font-size: 2rem;
+  }
+  20% {
+    opacity: 1;
+    font-size: 2.6rem;
+  }
+  100% {
+    opacity: 1;
+    font-size: 2.2rem;
+  }
+}
+
+@keyframes restartSpanFade {
+  0% {
+    opacity: 0;
+    font-size: 2rem;
+  }
+  20% {
+    opacity: 1;
+    font-size: 2.6rem;
+  }
+  100% {
+    opacity: 1;
+    font-size: 2.2rem;
+  }
 }
 /*# sourceMappingURL=style.css.map */
