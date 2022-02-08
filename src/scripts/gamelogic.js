@@ -55,6 +55,7 @@ function userWon(userWinRow, playfield){
   board.appendChild(restartDiv);
 }
 function userTie(playfield){
+  if(document.querySelector(".restart")) return;
   const board = document.querySelector(".board");
 
   //increment scoreboard
