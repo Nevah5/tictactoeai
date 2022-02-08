@@ -9,7 +9,13 @@ const winCases = [
   [2, 4, 6]
 ];
 var playerScores = [0, 0];
-function clearBoard(){}
+function clearBoard(){
+  for(i = 1; i <= 9; i++){
+    document.getElementById("field"+i).innerHTML = "";
+  }
+  document.querySelector(".restart").remove();
+  document.querySelector(".line").remove();
+}
 function userWon(userWinRow, playfield){
   if(document.querySelector(".line")) return;
   const board = document.querySelector(".board");
