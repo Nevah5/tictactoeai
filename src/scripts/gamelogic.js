@@ -44,9 +44,11 @@ function userWon(userWinRow, playfield){
   //add restart "screen"
   const restartDiv = document.createElement("div");
   restartDiv.setAttribute("class", "restart");
-  restartDiv.addEventListener("click", _ => {
-    clearBoard();
-  });
+  setInterval(_ =>{
+    restartDiv.addEventListener("click", _ => {
+      clearBoard();
+    });
+  }, 2000);
   const span = document.createElement("span");
   span.innerHTML = "Click to<br> restart!";
   restartDiv.appendChild(span);
@@ -62,9 +64,11 @@ function userTie(playfield){
   //add restart "screen"
   const restartDiv = document.createElement("div");
   restartDiv.setAttribute("class", "restart");
-  restartDiv.addEventListener("click", _ => {
-    clearBoard();
-  });
+  setInterval(_ =>{
+    restartDiv.addEventListener("click", _ => {
+      clearBoard();
+    });
+  }, 2000);
   const span = document.createElement("span");
   span.innerHTML = "Tie!<br>Click to<br> restart!";
   restartDiv.appendChild(span);
