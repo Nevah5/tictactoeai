@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Concert+One&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Concert One, monospace, sans-serif;
+    background-color: rgb(66, 118, 202);
+    overflow: hidden;
+}
+
+h1{
+    font-size: 50px;
+}
+body > div a {
+    padding: 10px 23px;
+    border-radius: 10px;
+    background-color: rgb(90, 202, 90);
+    color: white;
+    text-decoration: none;
+    font-size: 30px;
+    font-weight: 1000;
+}
+
+html{height:100%;}
+
+.drop {
+	width: 1px;
+	height:89px;
+    background-color: white;
+    border-top-right-radius:  50%;
+    border-top-left-radius:  50%;
+	position: absolute;
+    display: block;
+	bottom:200px;
+	-webkit-animation: fall .63s linear infinite;
+-moz-animation: fall .63s linear infinite;
+}
+
+/* animate the drops*/
+@-webkit-keyframes fall {
+	to {margin-top:900px;}
+}
+@-moz-keyframes fall {
+	to {margin-top:900px;}
+}
+.rain{
+    z-index: 9999;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+}
