@@ -8,13 +8,22 @@ const winCases = [
   [0, 4, 8],
   [2, 4, 6]
 ];
-var playerScores = [0, 0];
+var playerScores = [0, 0, 0];
 function clearBoard(){
   for(i = 1; i <= 9; i++){
     document.getElementById("field"+i).innerHTML = "";
   }
   document.querySelector(".restart").remove();
-  document.querySelector(".line").remove();
+  const line = document.querySelector(".line");
+  if(line != null){
+    document.querySelector(".line").remove();
+  }
+
+  //enable cursors on fields again
+  for(i = 1; i <= 9; i++){
+    const field = document.getElementById("field"+i);
+    field.style.cursor = "pointer";
+  }
 }
 function userWon(userWinRow, playfield){
   if(document.querySelector(".line")) return;
@@ -43,6 +52,24 @@ function userWon(userWinRow, playfield){
   restartDiv.appendChild(span);
   board.appendChild(restartDiv);
 }
+function userTie(playfield){
+  const board = document.querySelector(".board");
+
+  //increment scoreboard
+  playerScores[2]++;
+  document.querySelector("#tiescore").textContent = playerScores[2];
+
+  //add restart "screen"
+  const restartDiv = document.createElement("div");
+  restartDiv.setAttribute("class", "restart");
+  restartDiv.addEventListener("click", _ => {
+    clearBoard();
+  });
+  const span = document.createElement("span");
+  span.innerHTML = "Tie!<br>Click to<br> restart!";
+  restartDiv.appendChild(span);
+  board.appendChild(restartDiv);
+}
 document.addEventListener("DOMContentLoaded", _ => {
   //for each move
   document.querySelector("div.board").addEventListener("click", _ => {
@@ -65,5 +92,9 @@ document.addEventListener("DOMContentLoaded", _ => {
         userWon(wincase, board);
       }
     });
+    //test if no tie
+    if(!board.includes(0)){
+      userTie(board);
+    }
   });
 });

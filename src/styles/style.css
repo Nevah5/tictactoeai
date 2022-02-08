@@ -398,12 +398,6 @@ body > div > div.board > .restart {
   }
 }
 
-body > div > div.board > .restart span {
-  font-size: 0rem;
-  -webkit-animation: restartSpanFade 1s 1.5s ease-in-out forwards;
-          animation: restartSpanFade 1s 1.5s ease-in-out forwards;
-}
-
 @-webkit-keyframes restartSpanFade {
   0% {
     opacity: 0;
@@ -432,5 +426,12 @@ body > div > div.board > .restart span {
     opacity: 1;
     font-size: 2.2rem;
   }
+}
+
+body > div > div.board > .restart span {
+  font-size: 0rem;
+  -webkit-animation: restartSpanFade 1s 1.5s ease-in-out forwards;
+          animation: restartSpanFade 1s 1.5s ease-in-out forwards;
+  text-align: center;
 }
 /*# sourceMappingURL=style.css.map */

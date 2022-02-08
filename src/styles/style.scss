@@ -246,23 +246,24 @@ body > div{
           background-color: $bg-color;
         }
       }
-      span{
-        @keyframes restartSpanFade {
-          0%{
-            opacity: 0;
-            font-size: 2rem;
-          }
-          20%{
-            opacity: 1;
-            font-size: 2.6rem;
-          }
-          100%{
-            opacity: 1;
-            font-size: 2.2rem;
-          }
+      @keyframes restartSpanFade {
+        0%{
+          opacity: 0;
+          font-size: 2rem;
         }
+        20%{
+          opacity: 1;
+          font-size: 2.6rem;
+        }
+        100%{
+          opacity: 1;
+          font-size: 2.2rem;
+        }
+      }
+      span{
         font-size: 0rem;
         animation: restartSpanFade 1s 1.5s ease-in-out forwards;
+        text-align: center;
       }
     }
   }
