@@ -124,6 +124,8 @@ body > div{
     width: 25vw;
     height: 25vw;
     margin-top: 50px;
+    gap: 8px;
+    background-color: $color;
 
     & > div{ //fields
       height: 100%;
@@ -148,35 +150,7 @@ body > div{
         animation: xoFade .3s forwards;
       }
 
-      $border: $color solid 8px;
-      &:nth-child(1){
-        border-right: $border;
-        border-bottom: $border;
-      }
-      &:nth-child(2){
-        border-bottom: $border;
-      }
-      &:nth-child(3){
-        border-left: $border;
-        border-bottom: $border;
-      }
-      &:nth-child(4){
-        border-right: $border;
-      }
-      &:nth-child(6){
-        border-left: $border;
-      }
-      &:nth-child(7){
-        border-top: $border;
-        border-right: $border;
-      }
-      &:nth-child(8){
-        border-top: $border;
-      }
-      &:nth-child(9){
-        border-top: $border;
-        border-left: $border;
-      }
+      background-color: $bg-color;
     }
   }
 }

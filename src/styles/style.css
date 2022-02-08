@@ -176,6 +176,8 @@ body > div > div.board {
   width: 25vw;
   height: 25vw;
   margin-top: 50px;
+  gap: 8px;
+  background-color: #cdd5e7;
 }
 
 body > div > div.board > div {
@@ -190,6 +192,7 @@ body > div > div.board > div {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  background-color: #4276ca;
 }
 
 body > div > div.board > div div {
@@ -221,41 +224,5 @@ body > div > div.board > div div {
     height: 70%;
     width: 70%;
   }
-}
-
-body > div > div.board > div:nth-child(1) {
-  border-right: #cdd5e7 solid 8px;
-  border-bottom: #cdd5e7 solid 8px;
-}
-
-body > div > div.board > div:nth-child(2) {
-  border-bottom: #cdd5e7 solid 8px;
-}
-
-body > div > div.board > div:nth-child(3) {
-  border-left: #cdd5e7 solid 8px;
-  border-bottom: #cdd5e7 solid 8px;
-}
-
-body > div > div.board > div:nth-child(4) {
-  border-right: #cdd5e7 solid 8px;
-}
-
-body > div > div.board > div:nth-child(6) {
-  border-left: #cdd5e7 solid 8px;
-}
-
-body > div > div.board > div:nth-child(7) {
-  border-top: #cdd5e7 solid 8px;
-  border-right: #cdd5e7 solid 8px;
-}
-
-body > div > div.board > div:nth-child(8) {
-  border-top: #cdd5e7 solid 8px;
-}
-
-body > div > div.board > div:nth-child(9) {
-  border-top: #cdd5e7 solid 8px;
-  border-left: #cdd5e7 solid 8px;
 }
 /*# sourceMappingURL=style.css.map */
