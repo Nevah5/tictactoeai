@@ -237,7 +237,7 @@ body > div > div.board > .line {
   left: 50%;
   top: 50%;
   background-color: #cdd5e7;
-  border-radius: 2px;
+  border-radius: 4px;
   position: absolute;
   -webkit-animation: linereveal 1s ease-in-out forwards;
           animation: linereveal 1s ease-in-out forwards;
@@ -346,6 +346,18 @@ body > div > div.board > .line#l7 {
   grid-row: 2/3;
 }
 
+body > div > div.board > .border {
+  border: 7px solid #cdd5e7;
+  position: absolute;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  height: 120%;
+  width: 120%;
+  border-radius: .5em;
+}
+
 body > div > div.board > .restart {
   position: absolute;
   -webkit-transform: translate(-50%, -50%);
@@ -364,9 +376,8 @@ body > div > div.board > .restart {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  border-radius: .5em;
-  -webkit-animation: restartFade 1s 2s ease-in-out forwards;
-          animation: restartFade 1s 2s ease-in-out forwards;
+  -webkit-animation: restartFade 1s 1.2s ease-in-out forwards;
+          animation: restartFade 1s 1.2s ease-in-out forwards;
 }
 
 @-webkit-keyframes restartFade {
@@ -389,8 +400,8 @@ body > div > div.board > .restart {
 
 body > div > div.board > .restart span {
   font-size: 0rem;
-  -webkit-animation: restartSpanFade 1s 2.3s ease-in-out forwards;
-          animation: restartSpanFade 1s 2.3s ease-in-out forwards;
+  -webkit-animation: restartSpanFade 1s 1.5s ease-in-out forwards;
+          animation: restartSpanFade 1s 1.5s ease-in-out forwards;
 }
 
 @-webkit-keyframes restartSpanFade {

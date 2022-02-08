@@ -162,7 +162,7 @@ body > div{
       left: 50%;
       top: 50%;
       background-color: $color;
-      border-radius: 2px;
+      border-radius: 4px;
       position: absolute;
       animation: linereveal 1s ease-in-out forwards;
       background-position: 0% 50%;
@@ -215,6 +215,16 @@ body > div{
         grid-row: 2/3;
       }
     }
+    & > .border{
+      border: 7px solid $color;
+      position: absolute;
+      transform: translate(-50%, -50%);
+      top: 50%;
+      left: 50%;
+      height: 120%;
+      width: 120%;
+      border-radius: .5em;
+    }
     & > .restart{
       position: absolute;
       transform: translate(-50%, -50%);
@@ -226,8 +236,7 @@ body > div{
       display: flex;
       justify-content: center;
       align-items: center;
-      border-radius: .5em;
-      animation: restartFade 1s 2s ease-in-out forwards;
+      animation: restartFade 1s 1.2s ease-in-out forwards;
 
       @keyframes restartFade {
         0%{
@@ -253,7 +262,7 @@ body > div{
           }
         }
         font-size: 0rem;
-        animation: restartSpanFade 1s 2.3s ease-in-out forwards;
+        animation: restartSpanFade 1s 1.5s ease-in-out forwards;
       }
     }
   }

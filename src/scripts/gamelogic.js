@@ -8,11 +8,34 @@ const winCases = [
   [0, 4, 8],
   [2, 4, 6]
 ];
-function userWon(userWinRow){
+var playerScores = [0, 0];
+function clearBoard(){}
+function userWon(userWinRow, playfield){
+  if(document.querySelector(".line")) return;
+  const board = document.querySelector(".board");
+
+  //add line where win
   const line = document.createElement("div");
   line.setAttribute("id", "l" + winCases.indexOf(userWinRow));
   line.setAttribute("class", "line");
-  document.querySelector(".board").appendChild(line);
+  board.appendChild(line);
+
+  //increment scoreboard
+  const playerWin = playfield[userWinRow[0]];
+  const scoreSelector = playerWin == 1 ? "#userscore" : "#aiscore";
+  playerScores[playerWin - 1]++;
+  document.querySelector(scoreSelector).textContent = playerScores[playerWin - 1];
+
+  //add restart "screen"
+  const restartDiv = document.createElement("div");
+  restartDiv.setAttribute("class", "restart");
+  restartDiv.addEventListener("click", _ => {
+    clearBoard();
+  });
+  const span = document.createElement("span");
+  span.innerHTML = "Click to<br> restart!";
+  restartDiv.appendChild(span);
+  board.appendChild(restartDiv);
 }
 document.addEventListener("DOMContentLoaded", _ => {
   //for each move
@@ -33,7 +56,7 @@ document.addEventListener("DOMContentLoaded", _ => {
     //test if user or ai has won
     winCases.forEach(wincase => {
       if(board[wincase[0]] == board[wincase[1]] && board[wincase[1]] == board[wincase[2]] && board[wincase[2]] != 0){
-        userWon(wincase);
+        userWon(wincase, board);
       }
     });
   });
