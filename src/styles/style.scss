@@ -127,6 +127,7 @@ body > div{
     gap: 8px;
     background-color: $color;
     position: relative;
+    margin-top: 10vh;
 
     & > div.field{ //fields
       height: 100%;

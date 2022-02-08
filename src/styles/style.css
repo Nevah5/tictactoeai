@@ -179,6 +179,7 @@ body > div > div.board {
   gap: 8px;
   background-color: #cdd5e7;
   position: relative;
+  margin-top: 10vh;
 }
 
 body > div > div.board > div.field {
