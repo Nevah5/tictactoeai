@@ -193,8 +193,34 @@ body > div > div.board > div {
 }
 
 body > div > div.board > div div {
-  height: 70%;
-  width: 70%;
+  -webkit-animation: xoFade .3s forwards;
+          animation: xoFade .3s forwards;
+}
+
+@-webkit-keyframes xoFade {
+  0% {
+    opacity: 0;
+    height: 30%;
+    width: 30%;
+  }
+  100% {
+    opacity: 1;
+    height: 70%;
+    width: 70%;
+  }
+}
+
+@keyframes xoFade {
+  0% {
+    opacity: 0;
+    height: 30%;
+    width: 30%;
+  }
+  100% {
+    opacity: 1;
+    height: 70%;
+    width: 70%;
+  }
 }
 
 body > div > div.board > div:nth-child(1) {
