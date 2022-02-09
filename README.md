@@ -1,7 +1,7 @@
 <br>
 
 <p align="center">
-  <img src="./tictactoeai.png" height="100px"><br>
+  <img src="./src/images/tictactoeai.png" height="100px"><br>
   A TicTacToe Game in<br>
   the browser with an AI.
 </p>
