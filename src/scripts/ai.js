@@ -40,15 +40,28 @@ function emptyFields(board){
     });
     return empty;
 }
-function checkWin(board, move, ai){
-    boardAfter = Array.from(board);
+function checkWin(board, move, ai = false){
+    var boardAfter = Array.from(board);
+    boardAfter[move] = ai ? 2 : 1;
+
+    var ret = false;
+    winCases.forEach(wincase => {
+        if(boardAfter[wincase[0]] == boardAfter[wincase[1]] && boardAfter[wincase[1]] == boardAfter[wincase[2]] && boardAfter[wincase[2]] == boardAfter[move]){
+            ret = true;
+        }
+    });
+    return ret;
 }
 
 function minimax(board, moveIndex, depth = null) {
     var avaibleSpots = emptyFields(board);
 
     //winning on next move
-
-    return Math.floor(Math.random()*10);
+    if(checkWin(board, moveIndex, true)){ //if ai can win with this field
+        return 10;
+    }else if(checkWin(board, moveIndex)){ //if user wins with this field
+        return -10;
+    }
+    return Math.floor(Math.random() * -90) - 11;
 }
 
