@@ -15,7 +15,7 @@ function bestMove() {
     let bestMove;
     for (let i = 1; i <= 9; i++) {
         if (board[i - 1] == 0) {
-            let score = minimax(board, i - 1);
+            let score = minmax(board, i - 1, 3);
             if (score > bestScore) {
                 bestScore = score;
                 bestMove = i; //set "O" for this field
@@ -51,7 +51,8 @@ function checkWinAfterMove(board, move, ai = false) {
     return ret;
 }
 
-function minimax(board, moveIndex, depth = null) {
+function minmax(board, moveIndex, depth = null) {
+    depth -= depth != null ? 1 : null;
     var avaibleSpots = emptyFields(board);
 
     // winning on next move
@@ -60,6 +61,6 @@ function minimax(board, moveIndex, depth = null) {
     } else if (checkWinAfterMove(board, moveIndex)) { //if user wins with this field
         return -10;
     }
-    return Math.floor(Math.random() * -90) - 11;
+    return Math.floor(Math.random() * -90) - 11; //random field
 }
 
