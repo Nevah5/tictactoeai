@@ -15,7 +15,7 @@ function bestMove() {
     let bestMove;
     for (let i = 1; i <= 9; i++) {
         if (board[i - 1] == 0) {
-            let score = minmax(board, i - 1, 3);
+            let score = minimax(board, i - 1, 3, true);
             if (score > bestScore) {
                 bestScore = score;
                 bestMove = i; //set "O" for this field
@@ -51,16 +51,41 @@ function checkWinAfterMove(board, move, ai = false) {
     return ret;
 }
 
-function minmax(board, moveIndex, depth = null) {
-    depth -= depth != null ? 1 : null;
+function minimax(board, moveIndex, depth = null, turn = true) {
     var avaibleSpots = emptyFields(board);
-
-    // winning on next move
-    if (checkWinAfterMove(board, moveIndex, true)) { //if ai can win with this field
-        return 10;
-    } else if (checkWinAfterMove(board, moveIndex)) { //if user wins with this field
-        return -10;
+    //return static eval
+    if(depth == 0){
+        if (checkWinAfterMove(board, moveIndex, true)) { //if ai can win with this field
+            return 10;
+        } else if (checkWinAfterMove(board, moveIndex)) { //if user wins with this field
+            return -10;
+        }else if(avaibleSpots.length != 0){
+            return 0;
+        }
     }
-    return Math.floor(Math.random() * -90) - 11; //random field
+
+    if(turn){ //ai's turn
+        var maxEval = -Infinity;
+        avaibleSpots.forEach(spot => {
+            //create board with this move
+            var newboard = Array.from(board);
+            newboard[spot] = 2;
+            //calc eval score
+            var eval = minimax(newboard, spot, depth - 1, false);
+            maxEval = maxEval < eval ? eval : maxEval;
+        });
+        return maxEval;
+    }else{ //if player's turn
+        var minEval = +Infinity;
+        avaibleSpots.forEach(spot => {
+            //create board with this move
+            var newboard = Array.from(board);
+            newboard[spot] = 2;
+            //calc eval score
+            var eval = minimax(newboard, spot, depth - 1, true);
+            minEval = minEval > eval ? eval : minEval;
+        });
+        return minEval;
+    }
 }
 
