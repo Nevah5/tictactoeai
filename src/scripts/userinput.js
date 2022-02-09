@@ -6,7 +6,10 @@ document.addEventListener('DOMContentLoaded', _ => {
         var playerIcon = '<div class="x"></div>';
         field.innerHTML = playerIcon;
         field.style.cursor = 'initial';
-        bestMove();
+        if (!checkWin()) {
+          bestMove();
+          checkWin();
+        }
       }
     });
   }

@@ -9,24 +9,24 @@ const winCases = [
   [2, 4, 6]
 ];
 var playerScores = [0, 0, 0];
-function clearBoard(){
-  for(i = 1; i <= 9; i++){
-    document.getElementById("field"+i).innerHTML = "";
+function clearBoard() {
+  for (i = 1; i <= 9; i++) {
+    document.getElementById("field" + i).innerHTML = "";
   }
   document.querySelector(".restart").remove();
   const line = document.querySelector(".line");
-  if(line != null){
+  if (line != null) {
     document.querySelector(".line").remove();
   }
 
   //enable cursors on fields again
-  for(i = 1; i <= 9; i++){
-    const field = document.getElementById("field"+i);
+  for (i = 1; i <= 9; i++) {
+    const field = document.getElementById("field" + i);
     field.style.cursor = "pointer";
   }
 }
-function userWon(userWinRow, playfield){
-  if(document.querySelector(".line")) return;
+function userWon(userWinRow, playfield) {
+  if (document.querySelector(".line")) return;
   const board = document.querySelector(".board");
 
   //add line where win
@@ -41,10 +41,19 @@ function userWon(userWinRow, playfield){
   playerScores[playerWin - 1]++;
   document.querySelector(scoreSelector).textContent = playerScores[playerWin - 1];
 
+  //if user won
+  if (document.querySelector("#userscore").textContent == 3) {
+    document.querySelector(".winscreen").style.display = "flex";
+  }
+  //if user lost
+  if (document.querySelector("#aiscore").textContent == 3) {
+    document.querySelector(".loosescreen").style.display = "flex";
+  }
+
   //add restart "screen"
   const restartDiv = document.createElement("div");
   restartDiv.setAttribute("class", "restart");
-  setInterval(_ =>{
+  setInterval(_ => {
     restartDiv.addEventListener("click", _ => {
       clearBoard();
     });
@@ -54,8 +63,8 @@ function userWon(userWinRow, playfield){
   restartDiv.appendChild(span);
   board.appendChild(restartDiv);
 }
-function userTie(){
-  if(document.querySelector(".restart")) return;
+function userTie() {
+  if (document.querySelector(".restart")) return;
   const board = document.querySelector(".board");
 
   //increment scoreboard
@@ -65,7 +74,7 @@ function userTie(){
   //add restart "screen"
   const restartDiv = document.createElement("div");
   restartDiv.setAttribute("class", "restart");
-  setInterval(_ =>{
+  setInterval(_ => {
     restartDiv.addEventListener("click", _ => {
       clearBoard();
     });
@@ -75,39 +84,28 @@ function userTie(){
   restartDiv.appendChild(span);
   board.appendChild(restartDiv);
 }
-document.addEventListener("DOMContentLoaded", _ => {
-  //for each move
-  document.querySelector("div.board").addEventListener("click", _ => {
-    var board = [];
-    //convert playfield into array
-    for(i = 1; i <= 9; i++){
-      const field = document.getElementById("field"+i);
-      if(field.innerHTML == ''){
-        board[i-1] = 0;
-      }else if(field.innerHTML == '<div class="x"></div>'){
-        board[i-1] = 1;
-      }else if(field.innerHTML == '<div class="o"></div>'){
-        board[i-1] = 2;
-      }
+function checkWin(board) {
+  var board = [];
+  //convert playfield into array
+  for (i = 1; i <= 9; i++) {
+    const field = document.getElementById("field" + i);
+    if (field.innerHTML == '') {
+      board[i - 1] = 0;
+    } else if (field.innerHTML == '<div class="x"></div>') {
+      board[i - 1] = 1;
+    } else if (field.innerHTML == '<div class="o"></div>') {
+      board[i - 1] = 2;
     }
-
-    //test if user or ai has won
-    winCases.forEach(wincase => {
-      if(board[wincase[0]] == board[wincase[1]] && board[wincase[1]] == board[wincase[2]] && board[wincase[2]] != 0){
-        userWon(wincase, board);
-      }
-    });
-    //test if no tie
-    if(!board.includes(0)){
-      userTie();
-    }
-    //if user won
-    if(document.querySelector("#userscore").textContent == 3){
-      document.querySelector(".winscreen").style.display = "flex";
-    }
-    //if user lost
-    if(document.querySelector("#aiscore").textContent == 3){
-      document.querySelector(".loosescreen").style.display = "flex";
+  }
+  winCases.forEach(wincase => {
+    if (board[wincase[0]] == board[wincase[1]] && board[wincase[1]] == board[wincase[2]] && board[wincase[2]] != 0) {
+      userWon(wincase, board);
+      return true;
     }
   });
-});
+  //test if no tie
+  if (!board.includes(0)) {
+    userTie();
+    return true;
+  }
+}
