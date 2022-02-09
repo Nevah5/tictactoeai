@@ -6,7 +6,8 @@ document.addEventListener('DOMContentLoaded', _ => {
         var playerIcon = '<div class="x"></div>';
         field.innerHTML = playerIcon;
         field.style.cursor = 'initial';
-        if (!checkWin()) {
+        var ifWin = checkWin();
+        if(!ifWin){
           bestMove();
           checkWin();
         }

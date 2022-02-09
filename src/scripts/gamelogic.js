@@ -13,7 +13,10 @@ function clearBoard() {
   for (i = 1; i <= 9; i++) {
     document.getElementById("field" + i).innerHTML = "";
   }
-  document.querySelector(".restart").remove();
+  const restartDiv  = document.querySelector(".restart");
+  if(restartDiv != null){
+    restartDiv.remove();
+  }
   const line = document.querySelector(".line");
   if (line != null) {
     document.querySelector(".line").remove();
@@ -99,15 +102,17 @@ function checkWin(board) {
       board[i - 1] = 2;
     }
   }
+  var ret = null;
   winCases.forEach(wincase => {
     if (board[wincase[0]] == board[wincase[1]] && board[wincase[1]] == board[wincase[2]] && board[wincase[2]] != 0) {
       userWon(wincase, board);
-      return true;
+      ret = true;
     }
   });
   //test if no tie
   if (!board.includes(0)) {
     userTie();
-    return true;
+    ret = true;
   }
+  return ret;
 }
