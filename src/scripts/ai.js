@@ -15,21 +15,20 @@ function bestMove() {
     let bestMove;
     for (let i = 1; i <= 9; i++) {
         if (board[i-1] == 0) {
-            let score = minimax(board);
-            console.log("Score: " + score, "\nField: " + i + "\n---------");
-            if (score > bestScore) {
+            let score = minimax(board, i - 1); //returns 1 for now
+            if (score > bestScore) { //only true for first empty field
                 bestScore = score;
-                bestMove = i;
+                bestMove = i; //set O for this field
             }
         }
     }
-    console.log("Best Move: " + bestMove);
+    //play
     const fieldUpdate = document.getElementById("field" + bestMove);
     fieldUpdate.innerHTML = '<div class="o"></div>';
     fieldUpdate.style.cursor = 'initial';
 }
 
-function minimax(board) {
+function minimax(board, index) {
     return 1;
 }
 
