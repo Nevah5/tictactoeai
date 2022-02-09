@@ -1,25 +1,35 @@
 function bestMove() {
-    const field = document.getElementById("field");
+    //convert playfield into array
+    var board = [];
+    for (i = 1; i <= 9; i++) {
+        const field = document.getElementById("field" + i);
+        if (field.innerHTML == '') {
+            board[i - 1] = 0;
+        } else if (field.innerHTML == '<div class="x"></div>') {
+            board[i - 1] = 1;
+        } else if (field.innerHTML == '<div class="o"></div>') {
+            board[i - 1] = 2;
+        }
+    }
     let bestScore = -Infinity;
     let bestMove;
-    for (let i = 0; i < 3; i++) {
-        for (let j = 0; j < 3; j++) {
-            if (field[i][j] == '') {
-                field[i][j] = ai;
-                let score = minimax(field);
-                field[i][j] = '';
-                if (score > bestScore) {
-                    bestScore = score;
-                    bestMove = { i, j };
-                }
+    for (let i = 0; i < 9; i++) {
+        if (board[i] == 0) {
+            let score = minimax(board);
+            console.log("Score: " + score, "\nField: " + i + "\n---------");
+            if (score > bestScore) {
+                bestScore = score;
+                bestMove = i;
             }
         }
     }
-    field[bestMove.i][bestMove.j] = ai;
-    currentPlayer = human;
+    console.log("Best Move: " + bestMove);
+    const fieldUpdate = document.getElementById("field" + bestMove);
+    fieldUpdate.innerHTML = '<div class="o"></div>';
+    fieldUpdate.style.cursor = 'initial';
 }
 
-function minimax(field) {
+function minimax(board) {
     return 1;
 }
 
