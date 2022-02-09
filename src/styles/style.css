@@ -92,7 +92,7 @@ div.loosescreen {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  background-color: #4276ca;
+  background-color: #7c7c7c;
   -webkit-animation: screenfade 1s forwards;
           animation: screenfade 1s forwards;
 }

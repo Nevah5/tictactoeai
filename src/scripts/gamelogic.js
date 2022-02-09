@@ -53,7 +53,9 @@ function userWon(userWinRow, playfield) {
   //add restart "screen"
   const restartDiv = document.createElement("div");
   restartDiv.setAttribute("class", "restart");
+  restartDiv.style.cursor = "initial";
   setInterval(_ => {
+    restartDiv.style.cursor = "pointer";
     restartDiv.addEventListener("click", _ => {
       clearBoard();
     });
