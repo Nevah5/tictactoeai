@@ -14,7 +14,7 @@ function bestMove() {
     let bestScore = -Infinity;
     let bestMove;
     for (let i = 1; i <= 9; i++) {
-        if (board[i-1] == 0) {
+        if (board[i - 1] == 0) {
             let score = minimax(board, i - 1); //returns 1 for now
             if (score > bestScore) { //only true for first empty field
                 bestScore = score;
@@ -28,7 +28,27 @@ function bestMove() {
     fieldUpdate.style.cursor = 'initial';
 }
 
+
+function freefields(board) {
+    var empty = [];
+    board.forEach((element, index) => {
+        if (element == 0) {
+            empty.push(index)
+        }
+    });
+    return empty;
+}
+
+
 function minimax(board, index) {
-    return 1;
+    var availSpots = freefields(board)
+
+    if (checkWin(newBoard, huPlayer)) {
+        return { score: -10 };
+    } else if (checkWin(newBoard, aiPlayer)) {
+        return { score: 10 };
+    } else if (availSpots.length === 0) {
+        return { score: 0 };
+    }
 }
 
