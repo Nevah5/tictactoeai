@@ -13,8 +13,8 @@ function bestMove() {
     }
     let bestScore = -Infinity;
     let bestMove;
-    for (let i = 0; i < 9; i++) {
-        if (board[i] == 0) {
+    for (let i = 1; i <= 9; i++) {
+        if (board[i-1] == 0) {
             let score = minimax(board);
             console.log("Score: " + score, "\nField: " + i + "\n---------");
             if (score > bestScore) {
