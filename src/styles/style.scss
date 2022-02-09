@@ -18,11 +18,20 @@ div.winscreen{
   left: 50%;
   z-index: 20;
   display: flex;
+  z-index: 100;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   background-color: $bg-color;
+  animation: winscreenfade 1s forwards;
 
+  @keyframes winscreenfade {
+    from{
+      opacity: 0;
+    }to{
+      opacity: 1;
+    }
+  }
   h1{
     font-size: 50px;
     text-shadow: 2px 2px 5px rgb(90, 202, 90), 0 0 25px rgb(90, 202, 90), 0 0 5px rgb(255, 255, 255);
@@ -261,7 +270,7 @@ body > div{
       left: 50%;
       height: 120%;
       width: 120%;
-      z-index: 9999;
+      z-index: 10;
       display: flex;
       justify-content: center;
       align-items: center;

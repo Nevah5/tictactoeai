@@ -19,6 +19,7 @@ div.winscreen {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  z-index: 100;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -30,6 +31,26 @@ div.winscreen {
       -ms-flex-direction: column;
           flex-direction: column;
   background-color: #4276ca;
+  -webkit-animation: winscreenfade 1s forwards;
+          animation: winscreenfade 1s forwards;
+}
+
+@-webkit-keyframes winscreenfade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes winscreenfade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 div.winscreen h1 {
@@ -407,7 +428,7 @@ body > div > div.board > .restart {
   left: 50%;
   height: 120%;
   width: 120%;
-  z-index: 9999;
+  z-index: 10;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

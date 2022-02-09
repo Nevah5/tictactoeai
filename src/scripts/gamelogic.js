@@ -101,5 +101,9 @@ document.addEventListener("DOMContentLoaded", _ => {
     if(!board.includes(0)){
       userTie();
     }
+    //if user won
+    if(document.querySelector("#userscore").textContent == 3){
+      document.querySelector(".winscreen").style.display = "flex";
+    }
   });
 });
