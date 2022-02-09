@@ -105,5 +105,9 @@ document.addEventListener("DOMContentLoaded", _ => {
     if(document.querySelector("#userscore").textContent == 3){
       document.querySelector(".winscreen").style.display = "flex";
     }
+    //if user lost
+    if(document.querySelector("#aiscore").textContent == 3){
+      document.querySelector(".loosescreen").style.display = "flex";
+    }
   });
 });

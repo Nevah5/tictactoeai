@@ -5,6 +5,25 @@ body {
   font-family: Concert One, monospace, sans-serif;
   color: #cdd5e7;
   background-color: #4276ca;
+  overflow: hidden;
+}
+
+@-webkit-keyframes screenfade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes screenfade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 div.winscreen {
@@ -31,26 +50,8 @@ div.winscreen {
       -ms-flex-direction: column;
           flex-direction: column;
   background-color: #4276ca;
-  -webkit-animation: winscreenfade 1s forwards;
-          animation: winscreenfade 1s forwards;
-}
-
-@-webkit-keyframes winscreenfade {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes winscreenfade {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+  -webkit-animation: screenfade 1s forwards;
+          animation: screenfade 1s forwards;
 }
 
 div.winscreen h1 {
@@ -66,6 +67,190 @@ div.winscreen a {
   text-decoration: none;
   font-size: 30px;
   font-weight: 1000;
+}
+
+div.loosescreen {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  z-index: 20;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  z-index: 100;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-color: #4276ca;
+  -webkit-animation: screenfade 1s forwards;
+          animation: screenfade 1s forwards;
+}
+
+div.loosescreen .main {
+  z-index: 99999;
+}
+
+div.loosescreen h1 {
+  font-size: 50px;
+  text-shadow: 2px 2px 5px #a3a3a3, 0 0 25px black, 0 0 5px white;
+}
+
+div.loosescreen a {
+  padding: 10px 23px;
+  border-radius: 10px;
+  background-color: #5aca5a;
+  color: white;
+  text-decoration: none;
+  font-size: 30px;
+  font-weight: 1000;
+}
+
+div.loosescreen .drop {
+  width: 15px;
+  height: 120px;
+  position: absolute;
+  -webkit-animation: drop 0.5s linear infinite;
+          animation: drop 0.5s linear infinite;
+}
+
+@-webkit-keyframes drop {
+  0% {
+    -webkit-transform: translateY(0vh);
+            transform: translateY(0vh);
+  }
+  75% {
+    -webkit-transform: translateY(90vh);
+            transform: translateY(90vh);
+  }
+  100% {
+    -webkit-transform: translateY(90vh);
+            transform: translateY(90vh);
+  }
+}
+
+@keyframes drop {
+  0% {
+    -webkit-transform: translateY(0vh);
+            transform: translateY(0vh);
+  }
+  75% {
+    -webkit-transform: translateY(90vh);
+            transform: translateY(90vh);
+  }
+  100% {
+    -webkit-transform: translateY(90vh);
+            transform: translateY(90vh);
+  }
+}
+
+div.loosescreen .stem {
+  width: 2px;
+  height: 60%;
+  margin-left: 7px;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0)), to(rgba(255, 255, 255, 0.603)));
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.603));
+  -webkit-animation: stem 0.5s linear infinite;
+          animation: stem 0.5s linear infinite;
+}
+
+@-webkit-keyframes stem {
+  0% {
+    opacity: 1;
+  }
+  65% {
+    opacity: 1;
+  }
+  75% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes stem {
+  0% {
+    opacity: 1;
+  }
+  65% {
+    opacity: 1;
+  }
+  75% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+div.loosescreen .splat {
+  width: 15px;
+  height: 10px;
+  border-top: 5px dotted rgba(255, 255, 255, 0.822);
+  border-radius: 50%;
+  opacity: 1;
+  -webkit-transform: scale(0);
+          transform: scale(0);
+  -webkit-animation: splat 0.5s linear infinite;
+          animation: splat 0.5s linear infinite;
+  display: inline-block;
+}
+
+@-webkit-keyframes splat {
+  0% {
+    opacity: 1;
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+  80% {
+    opacity: 1;
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+  90% {
+    opacity: 0.5;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: scale(1.5);
+            transform: scale(1.5);
+  }
+}
+
+@keyframes splat {
+  0% {
+    opacity: 1;
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+  80% {
+    opacity: 1;
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+  90% {
+    opacity: 0.5;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: scale(1.5);
+            transform: scale(1.5);
+  }
 }
 
 body > div {
