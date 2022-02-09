@@ -1,24 +1,17 @@
-// number of drops created.
-var nbDrop = 200;
+function show() {
+    $('.main').empty();
+    var increment = 0;
+    var drops = "";
+    var backDrops = "";
 
-// function to generate a random number range.
-function randRange(minNum, maxNum) {
-    return (Math.floor(Math.random() * (maxNum - minNum + 1)) + minNum);
-}
-
-// function to generate drops
-function createRain() {
-
-    for (i = 1; i < nbDrop; i++) {
-        var dropLeft = randRange(0, 1600);
-        var dropTop = randRange(-1000, 1400);
-
-        document.querySelector('.rain').innerHTML += '<div class="drop" id="drop' + i + '"></div>';
-        document.getElementById('drop' + i).style.left = dropLeft + "px";
-        document.getElementById('drop' + i).style.top = dropTop + "px";
-        // document.getElementById('drop' + i).style.top = dropTop;
+    while (increment < 100) {
+        var x = (Math.floor(Math.random() * (98 - 1 + 1) + 1));
+        var y = (Math.floor(Math.random() * (5 - 2 + 1) + 2));
+        increment += y;
+        drops += '<div class="drop" style="left: ' + increment + '%; bottom: ' + (y + y - 1 + 80) + '%; animation-delay: 0.' + x + 's; animation-duration: 0.5' + x + 's;"><div class="stem" style="animation-delay: 0.' + x + 's; animation-duration: 0.5' + x + 's;"></div><div class="splat" style="animation-delay: 0.' + x + 's; animation-duration: 0.5' + x + 's;"></div></div>';
+        backDrops += '<div class="drop" style="right: ' + increment + '%; bottom: ' + (y + y - 1 + 80) + '%; animation-delay: 0.' + x + 's; animation-duration: 0.5' + x + 's;"><div class="stem" style="animation-delay: 0.' + x + 's; animation-duration: 0.5' + x + 's;"></div><div class="splat" style="animation-delay: 0.' + x + 's; animation-duration: 0.5' + x + 's;"></div></div>';
     }
-
+    $('.main').append(backDrops);
 }
-// Make it rain
-createRain();
+$('body').toggleClass('splat-toggle');
+show();

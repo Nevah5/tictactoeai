@@ -51,10 +51,10 @@ h1{
     }
 
     .stem {
-    width: 1px;
+    width: 2px;
     height: 60%;
     margin-left: 7px;
-    background: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.25));
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.603));
     animation: stem 0.5s linear infinite;
     }
 
@@ -76,7 +76,7 @@ h1{
     .splat {
     width: 15px;
     height: 10px;
-    border-top: 2px dotted rgba(255, 255, 255, 0.5);
+    border-top: 5px dotted rgba(255, 255, 255, 0.822);
     border-radius: 50%;
     opacity: 1;
     transform: scale(0);
