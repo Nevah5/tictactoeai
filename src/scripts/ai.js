@@ -1,12 +1,13 @@
 function bestMove() {
+    const field = document.getElementById("field");
     let bestScore = -Infinity;
     let bestMove;
     for (let i = 0; i < 3; i++) {
         for (let j = 0; j < 3; j++) {
-            if (board[i][j] == '') {
-                board[i][j] = ai;
-                let score = minimax(board);
-                board[i][j] = '';
+            if (field[i][j] == '') {
+                field[i][j] = ai;
+                let score = minimax(field);
+                field[i][j] = '';
                 if (score > bestScore) {
                     bestScore = score;
                     bestMove = { i, j };
@@ -14,11 +15,11 @@ function bestMove() {
             }
         }
     }
-    board[bestMove.i][bestMove.j] = ai;
+    field[bestMove.i][bestMove.j] = ai;
     currentPlayer = human;
 }
 
-function minimax(board) {
+function minimax(field) {
     return 1;
 }
 
