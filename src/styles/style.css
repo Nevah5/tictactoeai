@@ -271,6 +271,23 @@ body > div {
           flex-direction: column;
 }
 
+body > div.link1 {
+  position: absolute;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  bottom: 20px;
+  right: 50px;
+  font-size: 1.5rem;
+}
+
+body > div.link1 a {
+  text-decoration: none;
+}
+
 body > div.difficulties {
   background-color: #cdd5e7;
   height: -webkit-fit-content;

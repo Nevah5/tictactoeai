@@ -150,6 +150,19 @@ body > div{
   align-items: center;
   flex-direction: column;
 
+  &.link1{
+    position: absolute;
+    justify-content: flex-end;
+    align-items: flex-end;
+    bottom: 20px;
+    right: 50px;
+    font-size: 1.5rem;
+
+    a{
+      text-decoration: none;
+    }
+  }
+
   &.difficulties{
     background-color: $color;
     height: fit-content;
