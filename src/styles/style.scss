@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Concert+One&display=swap');
 $color: rgb(205, 213, 231);
 $bg-color: rgb(66, 118, 202);
+$selected-color: #273B7A;
 body{
   margin: 0;
   padding: 0;
@@ -174,6 +175,7 @@ body > div{
     gap: 4px;
     border: solid $color 4px;
     border-radius: .5em;
+    z-index: 20;
 
     span{
       border-radius: .5em;
@@ -182,6 +184,10 @@ body > div{
       text-align: center;
       padding: 15px 0;
       cursor: pointer;
+
+      &.selected{
+        background-color: $selected-color;
+      }
     }
   }
 

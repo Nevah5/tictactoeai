@@ -299,6 +299,7 @@ body > div.difficulties {
   gap: 4px;
   border: solid #cdd5e7 4px;
   border-radius: .5em;
+  z-index: 20;
 }
 
 body > div.difficulties span {
@@ -308,6 +309,10 @@ body > div.difficulties span {
   text-align: center;
   padding: 15px 0;
   cursor: pointer;
+}
+
+body > div.difficulties span.selected {
+  background-color: #273B7A;
 }
 
 body > div.texttitle {

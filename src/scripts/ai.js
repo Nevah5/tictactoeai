@@ -11,7 +11,7 @@ function bestMove() {
             board[i - 1] = 2;
         }
     }
-    const bestMove = minimax(board, 7, true)[1];
+    const bestMove = minimax(board, difficulty, true)[1];
     //play
     const fieldUpdate = document.getElementById("field" + bestMove);
     fieldUpdate.innerHTML = '<div class="o"></div>';
