@@ -278,12 +278,12 @@ body > div.difficulties {
   height: fit-content;
   width: 200px;
   position: absolute;
-  bottom: 50px;
+  bottom: 30px;
+  left: 30px;
   justify-self: flex-end;
   -ms-flex-item-align: end;
       align-self: flex-end;
   font-size: 1.5rem;
-  left: 140px;
   gap: 4px;
   border: solid #cdd5e7 4px;
   border-radius: .5em;
@@ -298,7 +298,9 @@ body > div.difficulties span {
   cursor: pointer;
 }
 
-body > div .texttitle {
+body > div.texttitle {
+  height: 150px !important;
+  width: 150px !important;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -309,23 +311,17 @@ body > div .texttitle {
       -ms-flex-align: center;
           align-items: center;
   position: absolute;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
-  top: 15px;
-  left: 25px;
+  top: 10px;
+  left: 10px;
 }
 
-body > div.texttitle #logo {
-  width: 110px;
-  height: 110px;
+body > div.texttitle img {
+  width: 70%;
+  height: auto;
 }
 
 body > div.texttitle #titletop {
-  font-size: 2rem;
+  font-size: 1.4rem;
 }
 
 body > div div.x {

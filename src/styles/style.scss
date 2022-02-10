@@ -155,11 +155,11 @@ body > div{
     height: fit-content;
     width: 200px;
     position: absolute;
-    bottom: 50px;
+    bottom: 30px;
+    left: 30px;
     justify-self: flex-end;
     align-self: flex-end;
     font-size: 1.5rem;
-    left: 140px;
     gap: 4px;
     border: solid $color 4px;
     border-radius: .5em;
@@ -174,22 +174,23 @@ body > div{
     }
   }
 
-  .texttitle{
+  &.texttitle{
+    height: 150px !important;
+    width: 150px !important;
     display: flex;
     justify-content: center;
     align-items: center;
     position: absolute;
-    width: fit-content;
-    height: fit-content;
-    top: 15px;
-    left: 25px;
-  }
-  &.texttitle #logo{
-    width: 110px;
-    height: 110px;
-  }
-  &.texttitle #titletop{
-    font-size: 2rem;
+    top: 10px;
+    left: 10px;
+
+    img{
+      width: 70%;
+      height: auto;
+    }
+    #titletop{
+      font-size: 1.4rem;
+    }
   }
 
   @mixin crossX {
