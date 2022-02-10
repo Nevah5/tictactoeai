@@ -150,6 +150,17 @@ body > div{
   align-items: center;
   flex-direction: column;
 
+  &.difficulties{
+    height: fit-content;
+    width: fit-content;
+    position: absolute;
+    bottom: 50px;
+    justify-self: flex-end;
+    align-self: flex-end;
+    font-size: 1.5rem;
+    left: 140px;
+  }
+
   @mixin crossX {
     content: '';
     position: absolute;
