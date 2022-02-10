@@ -25,6 +25,16 @@ body{
   font-size: 30px;
   font-weight: 1000;
 }
+a#githublink{
+  position: absolute;
+  display: block;
+  bottom: 20px;
+  right: 20px;
+  font-size: 1.5rem;
+  text-decoration: none;
+  color: $color;
+  z-index: 20;
+}
 div.winscreen{
   position: absolute;
   height: 100%;
@@ -149,19 +159,7 @@ body > div{
   justify-content: flex-start;
   align-items: center;
   flex-direction: column;
-
-  &.link1{
-    position: absolute;
-    justify-content: flex-end;
-    align-items: flex-end;
-    bottom: 20px;
-    right: 50px;
-    font-size: 1.5rem;
-
-    a{
-      text-decoration: none;
-    }
-  }
+  position: relative;
 
   &.difficulties{
     background-color: $color;

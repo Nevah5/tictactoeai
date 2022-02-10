@@ -26,6 +26,17 @@ body {
   }
 }
 
+a#githublink {
+  position: absolute;
+  display: block;
+  bottom: 20px;
+  right: 20px;
+  font-size: 1.5rem;
+  text-decoration: none;
+  color: #cdd5e7;
+  z-index: 20;
+}
+
 div.winscreen {
   position: absolute;
   height: 100%;
@@ -269,23 +280,7 @@ body > div {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-}
-
-body > div.link1 {
-  position: absolute;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
-  -webkit-box-align: end;
-      -ms-flex-align: end;
-          align-items: flex-end;
-  bottom: 20px;
-  right: 50px;
-  font-size: 1.5rem;
-}
-
-body > div.link1 a {
-  text-decoration: none;
+  position: relative;
 }
 
 body > div.difficulties {
