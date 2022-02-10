@@ -38,6 +38,8 @@ function userWon(userWinRow, playfield) {
   line.setAttribute("class", "line");
   board.appendChild(line);
 
+  //other player/ai begins now
+  turnBegin = turnBegin ? false : true;
   //increment scoreboard
   const playerWin = playfield[userWinRow[0]];
   const scoreSelector = playerWin == 1 ? "#userscore" : "#aiscore";
@@ -66,6 +68,9 @@ function userWon(userWinRow, playfield) {
     restartDiv.style.cursor = "pointer";
     restartDiv.addEventListener("click", _ => {
       clearBoard();
+      if(!turnBegin){
+        bestMove();
+      }
     });
   }, 2000);
   const span = document.createElement("span");
