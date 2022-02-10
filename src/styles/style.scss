@@ -492,8 +492,8 @@ div.rating{
       width: 100%;
       transition: height .5s;
       background-color: $selected-color;
-      border-top-right-radius: 10px;
-      border-top-left-radius: 10px;
+      border-top-right-radius: 4px;
+      border-top-left-radius: 4px;
     }
   }
   .wrap{
@@ -523,6 +523,7 @@ div.rating{
 
     span{
       z-index: 1;
+      transition: height .5s;
     }
   }
   @mixin crossX {

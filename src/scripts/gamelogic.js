@@ -27,6 +27,9 @@ function clearBoard() {
     const field = document.getElementById("field" + i);
     field.style.cursor = "pointer";
   }
+  document.querySelector(".rating .score span#score").style.height = "50%";
+  document.querySelector(".rating .score span#score").innerHTML = "0";
+  document.querySelector(".rating .scorebar div.aiscore").style.height = "50%";
 }
 function userWon(userWinRow, playfield) {
   if (document.querySelector(".line")) return;
@@ -130,4 +133,28 @@ function checkWin(board) {
     ret = true;
   }
   return ret;
+}
+function updateRatingBar(board){
+  var board = [];
+  //convert playfield into array
+  for (i = 1; i <= 9; i++) {
+    const field = document.getElementById("field" + i);
+    if (field.innerHTML == '') {
+      board[i - 1] = 0;
+    } else if (field.innerHTML == '<div class="x"></div>') {
+      board[i - 1] = 1;
+    } else if (field.innerHTML == '<div class="o"></div>') {
+      board[i - 1] = 2;
+    }
+  }
+  var score = minimax(board, difficulty, true);
+  var height = "50%";
+  if(score[0] == -10){
+    height = "0%";
+  }else if(score[0] == 10){
+    height = "100%";
+  }
+  document.querySelector(".rating .score span#score").style.height = height;
+  document.querySelector(".rating .score span#score").innerHTML = score[0];
+  document.querySelector(".rating .scorebar div.aiscore").style.height = height;
 }

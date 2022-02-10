@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', _ => {
         field.innerHTML = playerIcon;
         field.style.cursor = 'initial';
         var ifWin = checkWin();
+        updateRatingBar();
         if(!ifWin){
           bestMove();
           checkWin();
