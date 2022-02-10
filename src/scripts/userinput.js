@@ -39,6 +39,7 @@ document.addEventListener('DOMContentLoaded', _ => {
 });
 
 function resetGame() {
+  turnBegin = true;
   document.getElementById("userscore").innerHTML = "0";
   document.getElementById("tiescore").innerHTML = "0";
   document.getElementById("aiscore").innerHTML = "0";
