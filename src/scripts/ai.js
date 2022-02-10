@@ -72,9 +72,6 @@ function minimax(board, depth, ai) {
                 bestMove = spot + 1;
             }
         });
-        if (depth == 5) {
-            console.log(allEvals);
-        }
         return [maxEval, bestMove];
     } else {
         let bestMove;

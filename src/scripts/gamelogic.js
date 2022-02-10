@@ -38,11 +38,18 @@ function userWon(userWinRow, playfield) {
   line.setAttribute("class", "line");
   board.appendChild(line);
 
+  //other player/ai begins now
+  turnBegin = turnBegin ? false : true;
   //increment scoreboard
   const playerWin = playfield[userWinRow[0]];
   const scoreSelector = playerWin == 1 ? "#userscore" : "#aiscore";
   playerScores[playerWin - 1]++;
-  document.querySelector(scoreSelector).textContent = playerScores[playerWin - 1];
+  const score  = document.querySelector(scoreSelector);
+  score.textContent = playerScores[playerWin - 1];
+  score.style.transform = "scale(1.3)";
+  setInterval(_ => {
+    score.style.transform = "scale(1)";
+  }, 400);
 
   //if user won
   if (document.querySelector("#userscore").textContent == 3) {
@@ -61,6 +68,9 @@ function userWon(userWinRow, playfield) {
     restartDiv.style.cursor = "pointer";
     restartDiv.addEventListener("click", _ => {
       clearBoard();
+      if(!turnBegin){
+        bestMove();
+      }
     });
   }, 2000);
   const span = document.createElement("span");
@@ -74,7 +84,12 @@ function userTie() {
 
   //increment scoreboard
   playerScores[2]++;
-  document.querySelector("#tiescore").textContent = playerScores[2];
+  const score = document.querySelector("#tiescore");
+  score.textContent = playerScores[2];
+  score.style.transform = "scale(1.3)";
+  setInterval(_ => {
+    score.style.transform = "scale(1)";
+  }, 600);
 
   //add restart "screen"
   const restartDiv = document.createElement("div");

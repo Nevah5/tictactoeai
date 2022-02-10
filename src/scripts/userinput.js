@@ -1,3 +1,4 @@
+var turnBegin = true;
 document.addEventListener('DOMContentLoaded', _ => {
   for (i = 1; i <= 9; i++) {
     const field = document.getElementById("field" + i);
