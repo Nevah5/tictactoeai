@@ -26,7 +26,6 @@ Dieses Projekt entsand wärend der CodeWeek im ZLI (07.02.2022 - 11.02.2022). Di
 
 ## SMART Ziele
 - Die Webseite soll ein funktionstüchtiges TicTacToe Spielfeld anzeigen, sowie ein Scoreboard.
-- Der User kann angeben, ob er oder die AI anfängt.
 - Der User kann per Mausklick, auf das gewünschte Feld, sein Spielzug ausführen.
 - Der User und die AI führend abwechselnd nach einander Spielzüge aus.
 - Das Scoreboard soll sich nach jeder Runde aktualisieren.
@@ -51,7 +50,8 @@ Dieses Projekt entsand wärend der CodeWeek im ZLI (07.02.2022 - 11.02.2022). Di
 3. Pull Request mit Beschreibung erstellen
 
 # Installations Anleitung
-### Work in progress
+Lade das Projekt von Github herunter und öffne Index.html um TicTacToe zu spielen.
+
 
 
 # Lizenz
