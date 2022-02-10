@@ -154,7 +154,7 @@ function updateRatingBar(board){
   }else if(score[0] == 10){
     height = "100%";
   }
-  document.querySelector(".rating .score span#score").style.height = height;
+  document.querySelector(".rating .score span#score").style.height = score[0] != -10 ? height : "20px";
   document.querySelector(".rating .score span#score").innerHTML = score[0];
   document.querySelector(".rating .scorebar div.aiscore").style.height = height;
 }
