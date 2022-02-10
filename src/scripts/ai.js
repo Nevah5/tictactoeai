@@ -11,23 +11,12 @@ function bestMove() {
             board[i - 1] = 2;
         }
     }
-    let bestScore = -Infinity;
-    let bestMove;
-    for (let i = 1; i <= 9; i++) {
-        if (board[i - 1] == 0) {
-            let score = minimax(board, i - 1, 3, true);
-            if (score > bestScore) {
-                bestScore = score;
-                bestMove = i; //set "O" for this field
-            }
-        }
-    }
+    const bestMove = minimax(board, 7, true)[1];
     //play
     const fieldUpdate = document.getElementById("field" + bestMove);
     fieldUpdate.innerHTML = '<div class="o"></div>';
     fieldUpdate.style.cursor = 'initial';
 }
-
 function emptyFields(board) {
     //returns empty fields indexes of board
     var empty = [];
@@ -38,54 +27,67 @@ function emptyFields(board) {
     });
     return empty;
 }
-function checkWinAfterMove(board, move, ai = false) {
-    var boardAfter = Array.from(board);
-    boardAfter[move] = ai ? 2 : 1;
-
+function checkWinAfterMovePlayer(board, ai = false) {
     var ret = false;
+    let player = ai ? 2 : 1;
     winCases.forEach(wincase => {
-        if (boardAfter[wincase[0]] == boardAfter[wincase[1]] && boardAfter[wincase[1]] == boardAfter[wincase[2]] && boardAfter[wincase[2]] == boardAfter[move]) {
+        if (board[wincase[0]] == board[wincase[1]] && board[wincase[1]] == board[wincase[2]] && board[wincase[2]] == player) {
             ret = true;
         }
     });
     return ret;
 }
-
-function minimax(board, moveIndex, depth = null, turn = true) {
-    var avaibleSpots = emptyFields(board);
-    //return static eval
-    if(depth == 0){
-        if (checkWinAfterMove(board, moveIndex, true)) { //if ai can win with this field
-            return 10;
-        } else if (checkWinAfterMove(board, moveIndex)) { //if user wins with this field
-            return -10;
-        }else if(avaibleSpots.length != 0){
-            return 0;
+function checkWinAfterMove(board) {
+    var ret = false;
+    winCases.forEach(wincase => {
+        if (board[wincase[0]] == board[wincase[1]] && board[wincase[1]] == board[wincase[2]] && board[wincase[2]] != 0) {
+            ret = true;
+        }
+    });
+    return ret;
+}
+function minimax(board, depth, ai) {
+    let avaibleSpots = emptyFields(board);
+    if(depth == 0 || avaibleSpots.length == 0 || checkWinAfterMove(board)){
+        if(checkWinAfterMovePlayer(board, true)){
+            return [10];
+        }else if(checkWinAfterMovePlayer(board, false)){
+            return [-10];
+        }else{
+            return [0];
         }
     }
 
-    if(turn){ //ai's turn
+    if(ai){
+        let bestMove;
         var maxEval = -Infinity;
+        var allEvals = [];
         avaibleSpots.forEach(spot => {
-            //create board with this move
-            var newboard = Array.from(board);
-            newboard[spot] = 2;
-            //calc eval score
-            var eval = minimax(newboard, spot, depth - 1, false);
-            maxEval = maxEval < eval ? eval : maxEval;
+            var newBoard = Array.from(board);
+            newBoard[spot] = 2;
+            let eval = minimax(newBoard, depth - 1, false)[0];
+            allEvals.push(eval);
+            if(eval > maxEval){
+                maxEval = eval;
+                bestMove = spot + 1;
+            }
         });
-        return maxEval;
-    }else{ //if player's turn
+        if(depth == 5){
+            console.log(allEvals);
+        }
+        return [maxEval, bestMove];
+    }else{
+        let bestMove;
         var minEval = +Infinity;
         avaibleSpots.forEach(spot => {
-            //create board with this move
-            var newboard = Array.from(board);
-            newboard[spot] = 2;
-            //calc eval score
-            var eval = minimax(newboard, spot, depth - 1, true);
-            minEval = minEval > eval ? eval : minEval;
+            var newBoard = Array.from(board);
+            newBoard[spot] = 1;
+            let eval = minimax(newBoard, depth - 1, true)[0];
+            if(eval < minEval){
+                minEval = eval;
+                bestMove = spot + 1;
+            }
         });
-        return minEval;
+        return [minEval, bestMove];
     }
 }
-
