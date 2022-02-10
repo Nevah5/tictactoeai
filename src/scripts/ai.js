@@ -48,17 +48,17 @@ function checkWinAfterMove(board) {
 }
 function minimax(board, depth, ai) {
     let avaibleSpots = emptyFields(board);
-    if(depth == 0 || avaibleSpots.length == 0 || checkWinAfterMove(board)){
-        if(checkWinAfterMovePlayer(board, true)){
+    if (depth == 0 || avaibleSpots.length == 0 || checkWinAfterMove(board)) {
+        if (checkWinAfterMovePlayer(board, true)) {
             return [10];
-        }else if(checkWinAfterMovePlayer(board, false)){
+        } else if (checkWinAfterMovePlayer(board, false)) {
             return [-10];
-        }else{
+        } else {
             return [0];
         }
     }
 
-    if(ai){
+    if (ai) {
         let bestMove;
         var maxEval = -Infinity;
         var allEvals = [];
@@ -67,20 +67,20 @@ function minimax(board, depth, ai) {
             newBoard[spot] = 2;
             let eval = minimax(newBoard, depth - 1, false)[0];
             allEvals.push(eval);
-            if(eval > maxEval){
+            if (eval > maxEval) {
                 maxEval = eval;
                 bestMove = spot + 1;
             }
         });
         return [maxEval, bestMove];
-    }else{
+    } else {
         let bestMove;
         var minEval = +Infinity;
         avaibleSpots.forEach(spot => {
             var newBoard = Array.from(board);
             newBoard[spot] = 1;
             let eval = minimax(newBoard, depth - 1, true)[0];
-            if(eval < minEval){
+            if (eval < minEval) {
                 minEval = eval;
                 bestMove = spot + 1;
             }

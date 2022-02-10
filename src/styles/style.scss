@@ -150,15 +150,60 @@ body > div{
   align-items: center;
   flex-direction: column;
 
-  &.difficulties{
-    height: fit-content;
-    width: fit-content;
+  &.link1{
     position: absolute;
-    bottom: 50px;
+    justify-content: flex-end;
+    align-items: flex-end;
+    bottom: 20px;
+    right: 50px;
+    font-size: 1.5rem;
+
+    a{
+      text-decoration: none;
+    }
+  }
+
+  &.difficulties{
+    background-color: $color;
+    height: fit-content;
+    width: 200px;
+    position: absolute;
+    bottom: 30px;
+    left: 30px;
     justify-self: flex-end;
     align-self: flex-end;
     font-size: 1.5rem;
-    left: 140px;
+    gap: 4px;
+    border: solid $color 4px;
+    border-radius: .5em;
+
+    span{
+      border-radius: .5em;
+      background-color: $bg-color;
+      width: 100%;
+      text-align: center;
+      padding: 15px 0;
+      cursor: pointer;
+    }
+  }
+
+  &.texttitle{
+    height: 150px !important;
+    width: 150px !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+
+    img{
+      width: 70%;
+      height: auto;
+    }
+    #titletop{
+      font-size: 1.4rem;
+    }
   }
 
   @mixin crossX {

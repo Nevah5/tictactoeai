@@ -271,20 +271,74 @@ body > div {
           flex-direction: column;
 }
 
+body > div.link1 {
+  position: absolute;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  bottom: 20px;
+  right: 50px;
+  font-size: 1.5rem;
+}
+
+body > div.link1 a {
+  text-decoration: none;
+}
+
 body > div.difficulties {
+  background-color: #cdd5e7;
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
+  width: 200px;
   position: absolute;
-  bottom: 50px;
+  bottom: 30px;
+  left: 30px;
   justify-self: flex-end;
   -ms-flex-item-align: end;
       align-self: flex-end;
   font-size: 1.5rem;
-  left: 140px;
+  gap: 4px;
+  border: solid #cdd5e7 4px;
+  border-radius: .5em;
+}
+
+body > div.difficulties span {
+  border-radius: .5em;
+  background-color: #4276ca;
+  width: 100%;
+  text-align: center;
+  padding: 15px 0;
+  cursor: pointer;
+}
+
+body > div.texttitle {
+  height: 150px !important;
+  width: 150px !important;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+
+body > div.texttitle img {
+  width: 70%;
+  height: auto;
+}
+
+body > div.texttitle #titletop {
+  font-size: 1.4rem;
 }
 
 body > div div.x {
