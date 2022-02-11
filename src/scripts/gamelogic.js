@@ -50,9 +50,9 @@ function userWon(userWinRow, playfield) {
   const score  = document.querySelector(scoreSelector);
   score.textContent = playerScores[playerWin - 1];
   score.style.transform = "scale(1.3)";
-  setInterval(_ => {
+  setTimeout(_ => {
     score.style.transform = "scale(1)";
-  }, 400);
+  }, 700);
 
   //if user won
   if (document.querySelector("#userscore").textContent == 3) {
@@ -67,7 +67,7 @@ function userWon(userWinRow, playfield) {
   const restartDiv = document.createElement("div");
   restartDiv.setAttribute("class", "restart");
   restartDiv.style.cursor = "initial";
-  setInterval(_ => {
+  setTimeout(_ => {
     restartDiv.style.cursor = "pointer";
     restartDiv.addEventListener("click", _ => {
       clearBoard();
