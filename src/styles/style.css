@@ -78,6 +78,7 @@ div.winscreen a {
   text-decoration: none;
   font-size: 30px;
   font-weight: 1000;
+  cursor: pointer;
 }
 
 div.loosescreen {
@@ -125,6 +126,7 @@ div.loosescreen a {
   text-decoration: none;
   font-size: 30px;
   font-weight: 1000;
+  cursor: pointer;
 }
 
 div.loosescreen .drop {
@@ -473,6 +475,10 @@ body > div > div.grid > div:nth-child(4), body > div > div.grid > div:nth-child(
 
 body > div > div.grid > div:nth-child(2), body > div > div.grid > div:nth-child(8) {
   font-size: 1rem;
+}
+
+body > div > div.grid > div:nth-child(2) a {
+  cursor: pointer;
 }
 
 body > div > div.grid > div:nth-child(7), body > div > div.grid > div:nth-child(9) {

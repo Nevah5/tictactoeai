@@ -25,6 +25,7 @@ body{
   text-decoration: none;
   font-size: 30px;
   font-weight: 1000;
+  cursor: pointer;
 }
 a#githublink{
   position: absolute;
@@ -302,7 +303,12 @@ body > div{
       } //USER & AI
       &:nth-child(2), &:nth-child(8){
         font-size: 1rem;
-      }//Swap and Retry Icon
+      }
+      &:nth-child(2){
+        a{
+          cursor: pointer;
+        }
+      }
       &:nth-child(7), &:nth-child(9){
         padding: 0;
         transform: translateY(-30%);

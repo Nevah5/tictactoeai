@@ -27,7 +27,7 @@
   </div>
   <div class="winscreen" style="display: none;">
     <h1>Du hast Gewonnen!</h1>
-    <a href="./index.html"><i class="fas fa-redo-alt"></i> Restart</a>
+    <a onclick="resetGame(true)"><i class="fas fa-redo-alt"></i> Restart</a>
     <script src="./src/scripts/effects/confetti.js"></script>
     <script>
       confetti.start();
@@ -36,7 +36,7 @@
   <div class="loosescreen" style="display: none;">
     <div class="main"></div>
     <h1>Du hast Verloren!</h1>
-    <a href="./index.html"><i class="fas fa-redo-alt"></i> Restart</a>
+    <a onclick="resetGame(true)"><i class="fas fa-redo-alt"></i> Restart</a>
     <script src="./src/scripts/effects/rain.js"></script>
   </div>
   <div>
@@ -45,7 +45,7 @@
         (<div class="x" id="usericon"></div>)
       </div>
       <div>
-        <a href="./" id="retryicon"><i class="fas fa-redo-alt"></i></a>
+        <a onclick="resetGame(true)" id="retryicon"><i class="fas fa-redo-alt"></i></a>
       </div>
       <div>
         (<div class="o" id="aiicon"></div>)

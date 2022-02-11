@@ -39,8 +39,10 @@ document.addEventListener('DOMContentLoaded', _ => {
   });
 });
 
-function resetGame() {
+function resetGame(refresh) {
   turnBegin = true;
+  document.querySelector(".loosescreen").style.display = "none";
+  document.querySelector(".winscreen").style.display = "none";
   document.getElementById("userscore").innerHTML = "0";
   document.getElementById("tiescore").innerHTML = "0";
   document.getElementById("aiscore").innerHTML = "0";
@@ -49,4 +51,8 @@ function resetGame() {
   document.querySelectorAll(".difficulties *").forEach((element) => {
     element.classList.remove("selected");
   });
+  if(refresh){
+    let selectors = {3:"easy", 5:"hard", 7:"impossible"};
+    document.querySelector(".difficulties #"+selectors[difficulty]).classList.add("selected");
+  }
 }
