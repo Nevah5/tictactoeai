@@ -2,6 +2,8 @@
 $color: rgb(205, 213, 231);
 $bg-color: rgb(66, 118, 202);
 $selected-color: #273B7A;
+$winscreen: #459880;
+$loosescreen: rgb(146, 146, 146);
 body{
   margin: 0;
   padding: 0;
@@ -50,7 +52,7 @@ div.winscreen{
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background-color: $bg-color;
+  background-color: $winscreen;
   animation: screenfade 1s forwards;
 
   h1{
@@ -74,7 +76,7 @@ div.loosescreen{
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background-color: rgb(124, 124, 124);
+  background-color: $loosescreen;
   animation: screenfade 1s forwards;
 
   .main{
