@@ -53,9 +53,8 @@ function minimax(board, depth, ai) {
             return [10];
         } else if (checkWinAfterMovePlayer(board, false)) {
             return [-10];
-        } else {
-            return [0];
         }
+        return [0];
     }
 
     if (ai) {
